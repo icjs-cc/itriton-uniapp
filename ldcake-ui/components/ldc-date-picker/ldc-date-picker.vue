@@ -1,6 +1,6 @@
 <template>
 	<view class="ldc-datetime-picker">
-		<view :class="{'datetimePickerMask':showPicker}" @click="maskClick" @touchmove.stop.prevent="returnHandle">
+		<view :class="{'datetimePickerMask':showPicker}" @touchmove.stop.prevent="returnHandle">
 			<view class="ldc-datetime-picker__content" :class="{'datetimePickerShow':showPicker}">
 				<view class="ldc-datetime-picker__header" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
 					<input type="text" disabled placeholder="开始时间" :value="startDate" 
@@ -44,7 +44,6 @@
 	 * @property {Boolean} isShow 是否显示
 	 * @property {String} themeColor 主题色
 	 * @event {Function()} confirm 确认选择
-	 * @event {Function()} mask 点击遮罩  
 	 * @example  <ldc-date-picker :is-show="true"></ldc-date-picker>
 	 */
 	export default {
@@ -187,9 +186,6 @@
 					this.pickerValue = pickerValue
 				}, 20)
 			},
-			maskClick() {
-				this.$emit("mask", false);
-			},
 			confirm() {
 				if (this.endDate < this.startDate) {
 					uni.showToast({
@@ -208,7 +204,6 @@
 					return;
 				}
 				this.$emit("confirm", [this.startDate, this.endDate]);
-				this.$emit("mask", false);
 			},
 			reset() {
 				this.startDate = '';
@@ -371,6 +366,7 @@
 				height: 90rpx;
 				margin: 0 46rpx;
 				margin-top: 4rpx;
+				font-size: 32rpx;
 				text-align: center;
 				align-items: center;
 				display: flex;

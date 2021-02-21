@@ -9,7 +9,16 @@
 				"navigationBarTitleText": "ldcake-uniapp"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/components/date-picker/date-picker",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

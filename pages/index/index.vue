@@ -1,6 +1,5 @@
 <template>
 	<view>
-		<ldc-date-picker :is-show="true"></ldc-date-picker>
 	</view>
 </template>
 
