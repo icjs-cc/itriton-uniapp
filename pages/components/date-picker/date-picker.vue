@@ -6,7 +6,7 @@
 				<view class="ldc-demo-result-line" @click="isShow=true">date-picker值：{{ result }}</view>
 			</view>
 		</view>
-		<ldc-date-picker :is-show="isShow" @confirm="confirm" @change="change"></ldc-date-picker>
+		<ldc-date-picker :default-value="result" v-model="isShow" :is-mask-close="false" @confirm="confirm"></ldc-date-picker>
 	</view>
 </template>
 

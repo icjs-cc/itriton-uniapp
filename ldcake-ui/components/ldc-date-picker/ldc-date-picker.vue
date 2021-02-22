@@ -1,6 +1,6 @@
 <template>
 	<view class="ldc-datetime-picker">
-		<view :class="{'datetimePickerMask':showPicker}" @touchmove.stop.prevent="returnHandle">
+		<view :class="{'datetimePickerMask':showPicker}" @click="maskClose" @touchmove.stop.prevent="returnHandle">
 			<view class="ldc-datetime-picker__content" :class="{'datetimePickerShow':showPicker}">
 				<view class="ldc-datetime-picker__header" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
 					<input type="text" disabled placeholder="开始时间" :value="startDate" 
@@ -43,6 +43,7 @@
 	 * @property {Array} value 默认展示的值
 	 * @property {Boolean} isShow 是否显示
 	 * @property {String} themeColor 主题色
+	 * @property {Boolean} isMaskClose 是否允许通过点击遮罩关闭Picker
 	 * @event {Function()} confirm 确认选择
 	 * @example  <ldc-date-picker :is-show="true"></ldc-date-picker>
 	 */
@@ -64,28 +65,33 @@
 				type: String,
 				default: '2200-12-01'
 			},
-			// 默认展示的值
+			// 布尔值变量，用于控制选择器的弹出与收起
 			value: {
+				type: Boolean,
+				default: false
+			},
+			// 是否显示
+			defaultValue: {
 				type: Array,
 				default () {
 					return [0, 0]
 				}
 			},
-			// 是否显示
-			isShow: {
-				type: Boolean,
-				default: false
-			},
 			// 主题色
 			themeColor: {
 				type: String,
 				default: ''
-			}
+			},
+			// 是否允许通过点击遮罩
+			isMaskClose: {
+				type: Boolean,
+				default: true
+			},
 		},
 		data() {
 			return {
 				defaultColor: '',
-				showPicker: this.isShow,
+				showPicker: this.value,
 				dayArr: [],
 				pickerValue: this.fields === 'year' ? [0] : this.fields === 'month' ? [0, 0] : [0, 0, 0],
 				dateType: "startDate",
@@ -94,11 +100,11 @@
 			};
 		},
 		watch: {
-			value(value) {
-				this.value = value;
+			defaultValue(value) {
+				this.defaultValue = value;
 				this.init();
 			},
-			isShow(value) {
+			value(value) {
 				this.showPicker = value;
 			}
 		},
@@ -130,7 +136,7 @@
 		},
 		created() {
 			this.defaultColor = this.$ldc.color.primary;
-			this.init()
+			this.init();
 		},
 		methods: {
 			returnHandle() {},
@@ -155,27 +161,27 @@
 					console.error("结束时间必须大等于开始时间");
 					return;
 				}
-				if (this.value[0]) {
-					if ((this.fields == 'year' && this.value[0].length != 4) || (this.fields == 'month' && this.value[0].length != 7) ||
-						(this.fields == 'day' && this.value[0].length != 10)) {
+				if (this.defaultValue[0]) {
+					if ((this.fields == 'year' && this.defaultValue[0].length != 4) || (this.fields == 'month' && this.defaultValue[0].length != 7) ||
+						(this.fields == 'day' && this.defaultValue[0].length != 10)) {
 						console.error("默认值格式与粒度格式不符");
 						return;
 					}
-					this.startDate = this.value[0];
-					if (this.value[1]) {
-						if ((this.fields == 'year' && this.value[1].length != 4) || (this.fields == 'month' && this.value[1].length != 7) ||
-							(this.fields == 'day' && this.value[1].length != 10)) {
+					this.startDate = this.defaultValue[0];
+					if (this.defaultValue[1]) {
+						if ((this.fields == 'year' && this.defaultValue[1].length != 4) || (this.fields == 'month' && this.defaultValue[1].length != 7) ||
+							(this.fields == 'day' && this.defaultValue[1].length != 10)) {
 							console.error("默认值格式与粒度格式不符");
 							return;
 						}
-						this.endDate = this.value[1];
+						this.endDate = this.defaultValue[1];
 						this.dateType = "endDate";
-						if (this.fields == 'day') this.dayArr = this.getMonthDay(this.value[1].slice(0, 4), this.value[1].slice(5, 7));
-						pickerValue = this.getIndex(this.value[1]);
+						if (this.fields == 'day') this.dayArr = this.getMonthDay(this.defaultValue[1].slice(0, 4), this.defaultValue[1].slice(5, 7));
+						pickerValue = this.getIndex(this.defaultValue[1]);
 					} else {
 						this.dateType = "startDate";
-						if (this.fields == 'day') this.dayArr = this.getMonthDay(this.value[0].slice(0, 4), this.value[0].slice(5, 7));
-						pickerValue = this.getIndex(this.value[0]);
+						if (this.fields == 'day') this.dayArr = this.getMonthDay(this.defaultValue[0].slice(0, 4), this.defaultValue[0].slice(5, 7));
+						pickerValue = this.getIndex(this.defaultValue[0]);
 					}
 				} else {
 					this.startDate = start;
@@ -185,6 +191,11 @@
 				if (pickerValue) setTimeout(() => {
 					this.pickerValue = pickerValue
 				}, 20)
+			},
+			maskClose(){
+				if(this.isMaskClose){
+					this.$emit('input', false);
+				}
 			},
 			confirm() {
 				if (this.endDate < this.startDate) {
@@ -206,8 +217,7 @@
 				this.$emit("confirm", [this.startDate, this.endDate]);
 			},
 			reset() {
-				this.startDate = '';
-				this.endDate = '';
+				this.init();
 			},
 			changeDateType(dateType) {
 				this.dateType = dateType;
