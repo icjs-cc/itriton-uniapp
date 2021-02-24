@@ -349,6 +349,8 @@
 			transition: all 0.3s ease;
 			transform: translateY(100%);
 			z-index: 998;
+			padding-bottom: constant(safe-area-inset-bottom);///兼容 IOS<11.2/
+			padding-bottom: env(safe-area-inset-bottom);///兼容 IOS>11.2/
 		}
 		
 		&__header{
@@ -415,8 +417,6 @@
 			height: 90rpx;
 			font-size: 36rpx;
 			line-height: 90rpx;
-			padding-bottom: constant(safe-area-inset-bottom);///兼容 IOS<11.2/
-			padding-bottom: env(safe-area-inset-bottom);///兼容 IOS>11.2/
 			
 			view {
 				display: block;
