@@ -1,0 +1,28 @@
+{
+	"easycom": {
+		"^ldc-(.*)": "@/ldcake-ui/components/ldc-$1/ldc-$1.vue"
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "ldcake-uniapp"
+			}
+		}
+	    ,{
+            "path" : "pages/components/date-picker/date-picker",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
