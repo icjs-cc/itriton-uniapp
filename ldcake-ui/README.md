@@ -4,7 +4,7 @@
 
 ## 说明
 
-ldcake-ui，是基于[uni-app](https://uniapp.dcloud.io/)的UI组件库
+[ldcake-ui](http://ldcake.icjs.ink/)，是基于[uni-app](https://uniapp.dcloud.io/)的UI组件库
 
 ## 特性
 
