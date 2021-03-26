@@ -49,9 +49,9 @@ Vue.use(ldcake);
 	"easycom": {
 		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
 		// npm安装方式
-		"^ldc-(.*)": "ldcake-ui/components/ldc-$1/ldc-$1.vue"
+		"^c-(.*)": "ldcake-ui/components/c-$1/c-$1.vue"
 		// 下载安装方式
-		// "^ldc-(.*)": "@/ldcake-ui/components/ldc-$1/ldc-$1.vue"
+		// "^c-(.*)": "@/ldcake-ui/components/c-$1/c-$1.vue"
 	},
 	// 此为本身已有的内容
 	"pages": [
@@ -65,7 +65,7 @@ Vue.use(ldcake);
 
 ```html
 <template>
-	<ldc-button>按钮</ldc-button>
+	<c-date-picker></c-date-picker>
 </template>
 ```
 

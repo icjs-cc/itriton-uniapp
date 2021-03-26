@@ -6,11 +6,11 @@ text {
 /* #endif */
 
 /* start--演示页面使用的统一样式--start */
-.ldc-demo {
+.c-demo {
 	padding: 25px 20px;
 }
 
-.ldc-demo-wrap {
+.c-demo-wrap {
 	border-width: 1px;
 	border-color: #ddd;
 	border-style: dashed;
@@ -19,16 +19,16 @@ text {
 	border-radius: 3px;
 }
 
-.ldc-demo-area {
+.c-demo-area {
 	text-align: center;
 }
 
-.ldc-no-demo-here {
-	color: $ldc-tips-color;
+.c-no-demo-here {
+	color: $c-tips-color;
 	font-size: 13px;
 }
 
-.ldc-demo-result-line {
+.c-demo-result-line {
 	border-width: 1px;
 	border-color: #ddd;
 	border-style: dashed;
@@ -36,34 +36,34 @@ text {
 	margin-top: 30px;
 	border-radius: 5px;
 	background-color: rgb(240, 240, 240);
-	color: $ldc-content-color;
+	color: $c-content-color;
 	font-size: 16px;
 	/* #ifndef APP-NVUE */
 	word-break: break-word;
 	display: inline-block;
 	/* #endif */
 	text-align: left;
-	
+
 }
 
-.ldc-demo-title,
-.ldc-config-title {
+.c-demo-title,
+.c-config-title {
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 
-.ldc-config-item {
+.c-config-item {
 	margin-top: 25px;
 }
 
-.ldc-config-title {
+.c-config-title {
 	margin-top: 20px;
 	padding-bottom: 5px;
 }
 
-.ldc-item-title {
+.c-item-title {
 	position: relative;
 	font-size: 15px;
 	padding-left: 8px;
@@ -71,7 +71,7 @@ text {
 	margin-bottom: 11px;
 }
 
-.ldc-item-title:after {
+.c-item-title:after {
 	position: absolute;
 	width: 4px;
 	top: -1px;
@@ -81,6 +81,13 @@ text {
 	/* #endif */
 	left: 0;
 	border-radius: 10px;
-	background-color: $ldc-content-color;
+	background-color: $c-content-color;
+}
+
+.c-subsection{
+	height: 25px;
+	background-color: rgb(238, 238, 239);
+	padding: 3px;
+	border-radius: 5px;
 }
 /* end--演示页面使用的统一样式--end */

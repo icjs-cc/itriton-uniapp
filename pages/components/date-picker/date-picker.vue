@@ -1,12 +1,12 @@
 <template>
-	<view class="ldc-demo">
-		<view class="ldc-demo-wrap">
-			<view class="ldc-demo-title">演示效果</view>
-			<view class="ldc-demo-area">
-				<view class="ldc-demo-result-line" @click="isShow=true">date-picker值：{{ result }}</view>
+	<view class="c-demo">
+		<view class="c-demo-wrap">
+			<view class="c-demo-title">演示效果</view>
+			<view class="c-demo-area">
+				<view class="c-demo-result-line" @click="isShow=true">date-picker值：{{ result }}</view>
 			</view>
 		</view>
-		<ldc-date-picker :default-value="result" v-model="isShow" :is-mask-close="false" @confirm="confirm"></ldc-date-picker>
+		<c-date-picker :default-value="result" v-model="isShow" :is-mask-close="false" @confirm="confirm"></c-date-picker>
 	</view>
 </template>
 
