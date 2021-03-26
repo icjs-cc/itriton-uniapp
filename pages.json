@@ -1,6 +1,6 @@
 {
 	"easycom": {
-		"^ldc-(.*)": "@/ldcake-ui/components/ldc-$1/ldc-$1.vue"
+		"^c-(.*)": "@/ldcake-ui/components/c-$1/c-$1.vue"
 	},
 	"pages": [
 		{
@@ -14,6 +14,15 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/spin/spin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Spin 加载中",
                 "enablePullDownRefresh": false
             }
             

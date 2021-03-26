@@ -1,34 +1,34 @@
 <template>
-	<view class="ldc-datetime-picker">
+	<view class="c-datetime-picker">
 		<view :class="{'datetimePickerMask':showPicker}" @click="maskClose" @touchmove.stop.prevent="returnHandle">
-			<view class="ldc-datetime-picker__content" :class="{'datetimePickerShow':showPicker}">
-				<view class="ldc-datetime-picker__header" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
+			<view class="c-datetime-picker__content" :class="{'datetimePickerShow':showPicker}">
+				<view class="c-datetime-picker__header" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
 					<input type="text" disabled placeholder="开始时间" :value="startDate" 
 						   :style="{color:dateType=='startDate'?(themeColor||defaultColor):'#282828','border-color':dateType=='startDate'?(themeColor||defaultColor):'transparent'}"
 						   @tap="changeDateType('startDate')">
-					<view class="ldc-datetime-picker__header-center">
+					<view class="c-datetime-picker__header-center">
 						至
 					</view>
 					<input type="text" disabled placeholder="结束时间" 
 						   :style="{color:dateType=='endDate'?(themeColor||defaultColor):'#282828','border-color':dateType=='endDate'?(themeColor||defaultColor):'transparent'}"
 						   :value="endDate" @tap="changeDateType('endDate')">
 				</view>
-				<picker-view indicator-class="ldc-datetime-picker__view-indicator" class="ldc-datetime-picker__view" :value="pickerValue" @change="pickerChangeValue">
+				<picker-view indicator-class="c-datetime-picker__view-indicator" class="c-datetime-picker__view" :value="pickerValue" @change="pickerChangeValue">
 					<template>
 						<picker-view-column>
-							<view class="ldc-datetime-picker__view-item" v-for="(item,index) in yearArr" :key="index">{{item}}</view>
+							<view class="c-datetime-picker__view-item" v-for="(item,index) in yearArr" :key="index">{{item}}</view>
 						</picker-view-column>
 						<picker-view-column v-if="fields!='year'">
-							<view class="ldc-datetime-picker__view-item" v-for="(item,index) in monthArr" :key="index">{{item}}</view>
+							<view class="c-datetime-picker__view-item" v-for="(item,index) in monthArr" :key="index">{{item}}</view>
 						</picker-view-column>
 						<picker-view-column v-if="fields=='day'">
-							<view class="ldc-datetime-picker__view-item" v-for="(item,index) in dayArr" :key="index">{{item}}</view>
+							<view class="c-datetime-picker__view-item" v-for="(item,index) in dayArr" :key="index">{{item}}</view>
 						</picker-view-column>
 					</template>
 				</picker-view>
-				<view class="ldc-datetime-picker__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<view class="ldc-datetime-picker__footer-cancel" @click="reset">重置</view>
-					<view class="ldc-datetime-picker__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]" @click="confirm">确认</view>
+				<view class="c-datetime-picker__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
+					<view class="c-datetime-picker__footer-cancel" @click="reset">重置</view>
+					<view class="c-datetime-picker__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]" @click="confirm">确认</view>
 				</view>
 			</view>
 		</view>
@@ -45,10 +45,10 @@
 	 * @property {String} themeColor 主题色
 	 * @property {Boolean} isMaskClose 是否允许通过点击遮罩关闭Picker
 	 * @event {Function()} confirm 确认选择
-	 * @example  <ldc-date-picker :is-show="true"></ldc-date-picker>
+	 * @example  <c-date-picker :is-show="true"></c-date-picker>
 	 */
 	export default {
-		name: 'LdcDatePicker',
+		name: 'c-date-picker',
 		props: {
 			// 颗粒度，可选值：day、month、year 
 			fields: {
@@ -135,7 +135,7 @@
 			}
 		},
 		created() {
-			this.defaultColor = this.$ldc.color.primary;
+			this.defaultColor = this.$c.color.primary;
 			this.init();
 		},
 		methods: {
@@ -340,7 +340,7 @@
 </script>
 
 <style lang="scss">
-	.ldc-datetime-picker {
+	.c-datetime-picker {
 		&__content{
 			position: fixed;
 			bottom: 0;
@@ -361,7 +361,7 @@
 			font-size: 32rpx;
 			align-items: center;
 			color: #282828;
-			border-bottom: 1rpx solid $ldc-border-color;
+			border-bottom: 1rpx solid $c-border-color;
 			
 			&-center {
 				display: flex;

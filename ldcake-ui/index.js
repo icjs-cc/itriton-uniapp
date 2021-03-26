@@ -2,13 +2,13 @@
 import isEmpty from './libs/utils/isEmpty.js'
 import color from './libs/config/color.js'
 
-const $ldc = {
+const $c = {
 	isEmpty,
 	color,
 }
 
 const install = Vue => {
-	Vue.prototype.$ldc = $ldc
+	Vue.prototype.$c = $c
 }
 
 export default {

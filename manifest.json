@@ -72,7 +72,13 @@
         "title" : "绿豆糕组件库",
         "domain" : "",
         "router" : {
-            "base" : "/ldcake-ui/"
+            "base" : "/ldcake-ui/",
+            "mode" : "hash"
+        },
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : false
+            }
         }
     }
 }
