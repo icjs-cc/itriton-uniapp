@@ -13,22 +13,27 @@
 	export default {
 		name: "c-spin",
 		props: {
+			// 大小，可选值为 large、small、default
 			size: {
 				type: String,
 				default: 'default'
 			},
+			// 是否固定，需要父级有 relative 或 absolute
 			isFix: {
 				type: Boolean,
 				default: false
 			},
+			// 是否全屏
 			isFullscreen: {
 				type: Boolean,
 				default: false
 			},
+			// 是否自定义
 			isCustom: {
 				type: Boolean,
 				default: false
 			},
+			// 背景透明度
 			opacity: {
 				type: Number,
 				default: 0.9

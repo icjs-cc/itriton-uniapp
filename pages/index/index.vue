@@ -33,6 +33,10 @@
 						name: '加载中（spin）',
 						url: '/pages/components/spin/spin'
 					},
+					{
+						name: '悬浮按钮（fabutton）',
+						url: '/pages/components/fabutton/fabutton'
+					},
 				]
 			}
 		}
