@@ -6,14 +6,14 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "ldcake-uniapp"
+				"navigationBarTitleText": "绿豆糕组件库"
 			}
 		}
 	    ,{
             "path" : "pages/components/date-picker/date-picker",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "日期选择器（date-picker）",
                 "enablePullDownRefresh": false
             }
             
@@ -27,10 +27,19 @@
             }
             
         }
+        ,{
+            "path" : "pages/components/fabutton/fabutton",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "悬浮按钮（fabutton）",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "绿豆糕组件库",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	}
