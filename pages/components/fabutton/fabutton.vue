@@ -27,7 +27,7 @@
 					}
 				],
 				current: 0,
-				isDock: false
+				isDock: true
 			}
 		},
 		methods:{
