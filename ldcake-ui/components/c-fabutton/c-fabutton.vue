@@ -24,7 +24,7 @@
 				type: Boolean,
 				default: false
 			},
-			// 背景透明度
+			// 背景颜色
 			background: {
 				type: String,
 				default: ''

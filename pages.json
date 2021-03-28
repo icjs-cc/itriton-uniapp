@@ -22,7 +22,7 @@
             "path" : "pages/components/spin/spin",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "Spin 加载中",
+                "navigationBarTitleText": "Spin（加载中）",
                 "enablePullDownRefresh": false
             }
             
