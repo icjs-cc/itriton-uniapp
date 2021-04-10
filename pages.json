@@ -22,7 +22,7 @@
             "path" : "pages/components/spin/spin",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "Spin 加载中",
+                "navigationBarTitleText": "Spin（加载中）",
                 "enablePullDownRefresh": false
             }
             
@@ -32,6 +32,15 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "悬浮按钮（fabutton）",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/mp-tips/mp-tips",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "右上角引导（mp-tips）",
                 "enablePullDownRefresh": false
             }
             
