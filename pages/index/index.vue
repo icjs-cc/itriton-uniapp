@@ -37,6 +37,10 @@
 						name: '悬浮按钮（fabutton）',
 						url: '/pages/components/fabutton/fabutton'
 					},
+					{
+						name: '右上角引导（mp-tips）',
+						url: '/pages/components/mp-tips/mp-tips'
+					},
 				]
 			}
 		}

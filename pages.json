@@ -36,6 +36,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/components/mp-tips/mp-tips",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "右上角引导（mp-tips）",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

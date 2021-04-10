@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view id="fabutton" class="fabutton"
-			:style="`left:${left}px;top:${top}px;background:${background}`"
+			:style="[{left:`${left}px`},{top:`${top}px`},{background:`${background}`}]"
 		  @touchstart="touchstart"
 			@touchmove.stop.prevent="touchmove" @touchend="touchend" @click.stop.prevent="click"
 			:class="{transition: isDock && !isMove }">
@@ -65,16 +65,6 @@
 				this.left = this.windowWidth - this.width - this.edge;
 				this.top = this.windowHeight - this.height - this.edge;
 			}).exec();
-		},
-		computed: {
-			handleStyle() {
-				const defaultColor = this.$c.color.primary;
-				return [ 
-					`background-color: ${this.background||defaultColor}`, 
-					`left: ${this.left}px`, 
-					`top: ${this.top}px`,
-				].join(',')
-			}
 		},
 		methods: {
 			click() {

@@ -96,7 +96,7 @@
 				pickerValue: this.fields === 'year' ? [0] : this.fields === 'month' ? [0, 0] : [0, 0, 0],
 				dateType: "startDate",
 				startDate: '',
-				endDate: "",
+				endDate: '',
 			};
 		},
 		watch: {
