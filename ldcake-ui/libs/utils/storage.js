@@ -25,3 +25,11 @@ export const clearStorage = () => {
 const getStorageKey = (k) => {
 	return `${config['name']}_${k}`.toUpperCase()
 }
+
+export default {
+	getStorageInfo,
+	setStorage,
+	getStorage,
+	removeStorage,
+	clearStorage
+}

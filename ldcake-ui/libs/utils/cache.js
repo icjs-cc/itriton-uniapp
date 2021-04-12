@@ -67,3 +67,10 @@ export const clearCache = () => {
 const getCacheKey = (k) => {
 	return `${k}`.toUpperCase()
 }
+
+export default {
+	setCache,
+	getCache,
+	removeCache,
+	clearCache
+}

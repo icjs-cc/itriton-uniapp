@@ -3,12 +3,11 @@ import color from './libs/config/color.js'
 import common from './libs/utils/common.js'
 import cache from './libs/utils/cache.js'
 import storage from './libs/utils/storage.js'
-
 const $c = {
 	color,
-	common,
-	storage,
-	cache,
+	...common,
+	...storage,
+	...cache,
 }
 
 const install = Vue => {
