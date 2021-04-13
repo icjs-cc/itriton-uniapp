@@ -21,7 +21,6 @@
 </template>
 
 <script>
-	import { uniTest } from '../../utils/test.js'
 	export default {
 		data() {
 			return {
@@ -44,9 +43,6 @@
 					},
 				]
 			}
-		},
-		mounted() {
-			uniTest()
 		}
 	}
 </script>
