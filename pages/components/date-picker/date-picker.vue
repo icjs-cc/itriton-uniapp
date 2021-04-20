@@ -20,7 +20,6 @@
 		},
 		methods: {
 			confirm(e){
-				console.log(e)
 				this.result = e;
 				this.isShow = false;
 			}

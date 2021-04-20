@@ -3,13 +3,13 @@
 		<view :class="{'datetimePickerMask':showPicker}" @click="maskClose" @touchmove.stop.prevent="returnHandle">
 			<view class="c-datetime-picker__content" :class="{'datetimePickerShow':showPicker}">
 				<view class="c-datetime-picker__header" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<input type="text" disabled placeholder="开始时间" :value="startDate" 
+					<input type="text" disabled :placeholder="startPlaceholder" :value="startDate" 
 						   :style="{color:dateType=='startDate'?(themeColor||defaultColor):'#282828','border-color':dateType=='startDate'?(themeColor||defaultColor):'transparent'}"
 						   @tap="changeDateType('startDate')">
 					<view class="c-datetime-picker__header-center">
-						至
+						{{rangeSeparator}}
 					</view>
-					<input type="text" disabled placeholder="结束时间" 
+					<input type="text" disabled :placeholder="endPlaceholder" 
 						   :style="{color:dateType=='endDate'?(themeColor||defaultColor):'#282828','border-color':dateType=='endDate'?(themeColor||defaultColor):'transparent'}"
 						   :value="endDate" @tap="changeDateType('endDate')">
 				</view>
@@ -60,10 +60,25 @@
 				type: String,
 				default: '1900-01-01'
 			},
+			// 范围选择时开始日期的占位内容
+			startPlaceholder: {
+				type: String,
+				default: '开始时间'
+			},
 			// 允许选中的最大值
 			end: {
 				type: String,
 				default: '2200-12-01'
+			},
+			// 范围选择时结束日期的占位内容
+			endPlaceholder: {
+				type: String,
+				default: '结束时间'
+			},
+			// 选择范围时的分隔符
+			rangeSeparator: {
+				type: String,
+				default: '至'
 			},
 			// 布尔值变量，用于控制选择器的弹出与收起
 			value: {
