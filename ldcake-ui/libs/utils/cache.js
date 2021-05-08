@@ -16,9 +16,9 @@ let dtime = '_deadtime'
 export const setCache = (k, v, t) => {
 	const key = getCacheKey(k)
 	setStorage(key, v)
-	var seconds = parseInt(t)
+	let seconds = parseInt(t)
 	if (seconds > 0) {
-		var timestamp = Date.parse(new Date())
+		let timestamp = Date.parse(new Date())
 		timestamp = timestamp / 1000 + seconds
 		setStorage(`${key}${dtime}`.toUpperCase(), `${timestamp}`)
 	} else {
@@ -56,7 +56,7 @@ export const getCache = (k, def) => {
 export const removeCache = (k) => {
 	const key = getCacheKey(k)
 	removeStorage(key)
-	removeStorage(`${key}dtime`.toUpperCase())
+	removeStorage(`${key}${dtime}`.toUpperCase())
 }
 
 // 清除cache

@@ -2,63 +2,51 @@
 	"easycom": {
 		"^c-(.*)": "@/ldcake-ui/components/c-$1/c-$1.vue"
 	},
-	"pages": [
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "绿豆糕组件库"
-			}
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "绿豆糕组件库"
 		}
-	    ,{
-            "path" : "pages/components/date-picker/date-picker",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "日期选择器（date-picker）",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/spin/spin",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "Spin（加载中）",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/fabutton/fabutton",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "悬浮按钮（fabutton）",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/mp-tips/mp-tips",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "右上角引导（mp-tips）",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/captcha/captcha",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "获取验证码（captcha）",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/components/date-picker/date-picker",
+		"style": {
+			"navigationBarTitleText": "日期选择器（date-picker）",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/spin/spin",
+		"style": {
+			"navigationBarTitleText": "Spin（加载中）",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/fabutton/fabutton",
+		"style": {
+			"navigationBarTitleText": "悬浮按钮（fabutton）",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/mp-tips/mp-tips",
+		"style": {
+			"navigationBarTitleText": "右上角引导（mp-tips）",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/captcha/captcha",
+		"style": {
+			"navigationBarTitleText": "获取验证码（captcha）",
+			"enablePullDownRefresh": false
+		}
+
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "绿豆糕组件库",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
 	}
 }
