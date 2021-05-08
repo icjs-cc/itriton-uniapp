@@ -1,4 +1,4 @@
-const config = require('../config/index')
+import config from '../config/index'
 
 export const getStorageInfo = () => {
 	return uni.getStorageInfoSync()
@@ -14,8 +14,9 @@ export const getStorage = (k) => {
 	return uni.getStorageSync(key)
 }
 
-export const removeStorage = () => {
-	return uni.removeStorageSync()
+export const removeStorage = (k) => {
+	const key = getStorageKey(k)
+	return uni.removeStorageSync(key)
 }
 
 export const clearStorage = () => {
