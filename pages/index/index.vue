@@ -54,15 +54,15 @@
 				],
 				toolList: [
 					{
-						name: '数据缓存',
+						name: '数据缓存（storage）',
 						url: '/pages/tools/storage/storage'
 					},
 					{
-						name: '定时缓存',
+						name: '定时缓存（cache）',
 						url: '/pages/tools/cache/cache'
 					},
 					{
-						name: '复制',
+						name: '复制（setClipboardData）',
 						url: '/pages/tools/copy/copy'
 					},
 				]
