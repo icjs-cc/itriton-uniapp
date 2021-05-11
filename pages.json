@@ -42,6 +42,27 @@
 			"enablePullDownRefresh": false
 		}
 
+	}, {
+		"path": "pages/tools/storage/storage",
+		"style": {
+			"navigationBarTitleText": "数据缓存（storage）",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/tools/cache/cache",
+		"style": {
+			"navigationBarTitleText": "定时缓存（cache）",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/tools/copy/copy",
+		"style": {
+			"navigationBarTitleText": "复制（copy）",
+			"enablePullDownRefresh": false
+		}
+
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

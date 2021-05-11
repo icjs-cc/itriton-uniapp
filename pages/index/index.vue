@@ -16,6 +16,12 @@
 				<text>{{item.name}}</text>
 				<text class="index__content-arrow"></text>
 			</navigator>
+			<view class="text-gray text-df mb-20">工具库</view>
+			<navigator class="index__content-cell" :url="item.url"
+					v-for="(item,index) in toolList" :key="`tool_${index}`">
+				<text>{{item.name}}</text>
+				<text class="index__content-arrow"></text>
+			</navigator>
 		</view>
 	</view>
 </template>
@@ -46,6 +52,20 @@
 						url: '/pages/components/captcha/captcha'
 					},
 				],
+				toolList: [
+					{
+						name: '数据缓存',
+						url: '/pages/tools/storage/storage'
+					},
+					{
+						name: '定时缓存',
+						url: '/pages/tools/cache/cache'
+					},
+					{
+						name: '复制',
+						url: '/pages/tools/copy/copy'
+					},
+				]
 			}
 		}
 	}
