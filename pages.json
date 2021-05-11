@@ -59,7 +59,7 @@
 	}, {
 		"path": "pages/tools/copy/copy",
 		"style": {
-			"navigationBarTitleText": "复制（copy）",
+			"navigationBarTitleText": "复制（setClipboardData）",
 			"enablePullDownRefresh": false
 		}
 
