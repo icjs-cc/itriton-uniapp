@@ -7,16 +7,16 @@ text {
 
 /* start--演示页面使用的统一样式--start */
 .c-demo {
-	padding: 25px 20px;
+	padding: 50rpx 40rpx;
 }
 
 .c-demo-wrap {
-	border-width: 1px;
+	border-width: 1rpx;
 	border-color: #ddd;
 	border-style: dashed;
 	background-color: rgb(250, 250, 250);
-	padding: 20px 10px;
-	border-radius: 3px;
+	padding: 40rpx 20rpx;
+	border-radius: 6rpx;
 }
 
 .c-demo-area {
@@ -25,19 +25,19 @@ text {
 
 .c-no-demo-here {
 	color: $c-tips-color;
-	font-size: 13px;
+	font-size: 26rpx;
 }
 
 .c-demo-result-line {
 	border-width: 1px;
 	border-color: #ddd;
 	border-style: dashed;
-	padding: 5px 20px;
-	margin-top: 30px;
-	border-radius: 5px;
+	padding: 10rpx 40rpx;
+	margin-top: 60rpx;
+	border-radius: 10rpx;
 	background-color: rgb(240, 240, 240);
 	color: $c-content-color;
-	font-size: 16px;
+	font-size: 30rpx;
 	/* #ifndef APP-NVUE */
 	word-break: break-word;
 	display: inline-block;
@@ -49,45 +49,45 @@ text {
 .c-demo-title,
 .c-config-title {
 	text-align: center;
-	font-size: 16px;
+	font-size: 32rpx;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-bottom: 40rpx;
 }
 
 .c-config-item {
-	margin-top: 25px;
+	margin-top: 50rpx;
 }
 
 .c-config-title {
-	margin-top: 20px;
-	padding-bottom: 5px;
+	margin-top: 40rpx;
+	padding-bottom: 10rpx;
 }
 
 .c-item-title {
 	position: relative;
-	font-size: 15px;
-	padding-left: 8px;
+	font-size: 30rpx;
+	padding-left: 16rpx;
 	line-height: 1;
-	margin-bottom: 11px;
+	margin-bottom: 22rpx;
 }
 
 .c-item-title:after {
 	position: absolute;
-	width: 4px;
-	top: -1px;
-	height: 16px;
+	width: 8rpx;
+	top: -2rpx;
+	height: 32rpx;
 	/* #ifndef APP-NVUE */
 	content: '';
 	/* #endif */
 	left: 0;
-	border-radius: 10px;
+	border-radius: 20rpx;
 	background-color: $c-content-color;
 }
 
 .c-subsection{
-	height: 25px;
+	height: 50rpx;
 	background-color: rgb(238, 238, 239);
-	padding: 3px;
-	border-radius: 5px;
+	padding: 6rpx;
+	border-radius: 10rpx;
 }
 /* end--演示页面使用的统一样式--end */

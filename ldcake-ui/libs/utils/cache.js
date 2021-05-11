@@ -59,7 +59,9 @@ export const removeCache = (k) => {
 	removeStorage(`${key}${dtime}`.toUpperCase())
 }
 
-// 清除cache
+/**
+ * 清除cache
+ */
 export const clearCache = () => {
 	clearStorage()
 }
