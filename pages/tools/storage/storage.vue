@@ -25,6 +25,11 @@
 		data() {
 			return {}
 		},
+		onLoad(options) {
+			uni.setNavigationBarTitle({
+			    title: options.title
+			});
+		},
 		methods: {
 			setStorage(){
 				this.$c.setStorage("storage", "缓存")
