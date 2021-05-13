@@ -10,56 +10,56 @@
 	}, {
 		"path": "pages/components/date-picker/date-picker",
 		"style": {
-			"navigationBarTitleText": "日期选择器（date-picker）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/components/spin/spin",
 		"style": {
-			"navigationBarTitleText": "Spin（加载中）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/components/fabutton/fabutton",
 		"style": {
-			"navigationBarTitleText": "悬浮按钮（fabutton）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/components/mp-tips/mp-tips",
 		"style": {
-			"navigationBarTitleText": "右上角引导（mp-tips）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/components/captcha/captcha",
 		"style": {
-			"navigationBarTitleText": "获取验证码（captcha）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/tools/storage/storage",
 		"style": {
-			"navigationBarTitleText": "数据缓存（storage）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/tools/cache/cache",
 		"style": {
-			"navigationBarTitleText": "定时缓存（cache）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
 	}, {
 		"path": "pages/tools/copy/copy",
 		"style": {
-			"navigationBarTitleText": "复制（setClipboardData）",
+			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 

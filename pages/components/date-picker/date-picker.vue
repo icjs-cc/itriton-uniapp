@@ -18,6 +18,11 @@
 				isShow: false,
 			}
 		},
+		onLoad(options) {
+			uni.setNavigationBarTitle({
+			    title: options.title
+			});
+		},
 		methods: {
 			confirm(e){
 				this.result = e;

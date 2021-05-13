@@ -25,6 +25,11 @@
 		data() {
 			return {}
 		},
+		onLoad(options) {
+			uni.setNavigationBarTitle({
+			    title: options.title
+			});
+		},
 		methods: {
 			setCache(){
 				this.$c.setCache("cache", "定时缓存10秒", 10)
