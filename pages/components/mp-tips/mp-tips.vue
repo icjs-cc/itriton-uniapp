@@ -24,6 +24,11 @@
 				
 			};
 		},
+		onLoad(options) {
+			uni.setNavigationBarTitle({
+			    title: options.title
+			});
+		},
 		methods:{
 			close(){
 				console.log("close")

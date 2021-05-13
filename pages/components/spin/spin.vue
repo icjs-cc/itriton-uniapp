@@ -49,6 +49,11 @@
 				isFullscreen: false
 			};
 		},
+		onLoad(options) {
+			uni.setNavigationBarTitle({
+			    title: options.title
+			});
+		},
 		methods: {
 			handleChange(val) {
 				this.isShow = !val

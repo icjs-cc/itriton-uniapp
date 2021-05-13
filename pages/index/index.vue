@@ -11,13 +11,13 @@
 		</view>
 		<view class="index__content">
 			<view class="text-gray text-df mb-20">基础组件</view>
-			<navigator class="index__content-cell" :url="item.url"
+			<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`"
 					v-for="(item,index) in baseList" :key="index">
 				<text>{{item.name}}</text>
 				<text class="index__content-arrow"></text>
 			</navigator>
 			<view class="text-gray text-df mb-20">工具库</view>
-			<navigator class="index__content-cell" :url="item.url"
+			<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`"
 					v-for="(item,index) in toolList" :key="`tool_${index}`">
 				<text>{{item.name}}</text>
 				<text class="index__content-arrow"></text>
@@ -62,7 +62,7 @@
 						url: '/pages/tools/cache/cache'
 					},
 					{
-						name: '复制（setClipboardData）',
+						name: '剪贴板（clipboard）',
 						url: '/pages/tools/copy/copy'
 					},
 				]

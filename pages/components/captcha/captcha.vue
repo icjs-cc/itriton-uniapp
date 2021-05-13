@@ -20,6 +20,11 @@
 				second: 20
 			}
 		},
+		onLoad(options) {
+			uni.setNavigationBarTitle({
+			    title: options.title
+			});
+		},
 		methods:{
 			handleSend(val) {
 				this.isStart = val
