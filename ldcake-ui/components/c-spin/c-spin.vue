@@ -1,7 +1,7 @@
 <template>
 	<view class="c-spin" :class="computedClass" :style="computedStyle">
 	  <view class="c-spin-main">
-	    <view class="c-spin-dot"></view>
+	    <view class="c-spin-dot" :style="[{backgroundColor: defaultColor}]"></view>
 	    <view class="c-spin-text">
 	      <slot></slot>
 	    </view>
@@ -33,11 +33,24 @@
 				type: Boolean,
 				default: false
 			},
+			// 主题色
+			themeColor: {
+				type: String,
+				default: ''
+			},
 			// 背景透明度
 			opacity: {
 				type: Number,
 				default: 0.9
 			},
+		},
+		data(){
+			return {
+				defaultColor: ''
+			}
+		},
+		mounted() {
+			this.defaultColor = this.themeColor||this.$c.color.primary
 		},
 		computed:{
 			computedClass(){
@@ -67,7 +80,6 @@
 			position: relative;
 			display: block;
 			border-radius: 50%;
-			background-color: $c-type-primary;
 			width: 20px;
 			height: 20px;
 			animation: ani-spin-bounce 1s 0s ease-in-out infinite;

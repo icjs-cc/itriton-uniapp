@@ -1,7 +1,7 @@
 <template>
 	<view class="c-captcha" :style="{color:defaultColor}">
 		<view v-if="showText==true" @click="handleSend">{{sendText}}</view>
-		<view v-else class="c-captcha__sended">{{captchaTimer}}{{waitText}}</view>
+		<view v-else :style="[{color: waitColor}]">{{captchaTimer}}{{waitText}}</view>
 	</view>
 </template>
 
@@ -25,6 +25,10 @@
 				type: String,
 				default: ''
 			},
+			waitColor: {
+				type: String,
+				default: '#a2a2a2'
+			},
 			border: {
 				type: Boolean,
 				default: false
@@ -44,7 +48,7 @@
 			}
 		},
 		mounted() {
-			this.defaultColor = this.$c.color.primary
+			this.defaultColor = this.color||this.$c.color.primary
 			this.captchaTimer = this.second
 		},
 		watch:{
@@ -90,10 +94,6 @@
 	
 	&__border-left{
 		border-left: 1upx solid #f2f2f2;
-	}
-	
-	&__sended{
-		color: #a2a2a2;
 	}
 }
 </style>
