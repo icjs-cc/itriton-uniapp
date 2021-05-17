@@ -51,6 +51,10 @@
 						name: '获取验证码（captcha）',
 						url: '/pages/components/captcha/captcha'
 					},
+					{
+						name: '空白栏（blank-bar）',
+						url: '/pages/components/blank-bar/blank-bar'
+					},
 				],
 				toolList: [
 					{
