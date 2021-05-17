@@ -11,7 +11,7 @@
 			</view>
 		</view>
 		<c-blank-bar background="#dddddd" :is-fixed="true" :is-bottom="true" safeAreaInsetBottom>
-			<button type="default">xxx</button>
+			<button type="default">提交</button>
 		</c-blank-bar>
 	</view>
 </template>
