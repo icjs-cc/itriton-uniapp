@@ -1,10 +1,10 @@
-<h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">ldcake</h3>
+<h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">绿豆糕组件库（ldcake-ui）</h3>
 <h3 align="center">基于UNI-APP快速开发的组件库</h3>
 
 
 ## 说明
 
-[ldcake-ui](http://ldcake.icjs.ink/)，是基于[uni-app](https://uniapp.dcloud.io/)的UI组件库
+[绿豆糕组件库（ldcake-ui）](http://ldcake.icjs.ink/)，是基于[uni-app](https://uniapp.dcloud.io/)的UI组件库
 
 ## 特性
 
@@ -70,4 +70,4 @@ Vue.use(ldcake);
 ```
 
 ## 版权信息
-ldcake遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将ldcake应用到您的产品中。
+绿豆糕组件库（ldcake-ui）遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将绿豆糕组件库（ldcake-ui）应用到您的产品中。
