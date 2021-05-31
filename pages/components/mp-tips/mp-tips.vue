@@ -20,14 +20,10 @@
 <script>
 	export default {
 		data() {
-			return {
-				
-			};
+			return {}
 		},
-		onLoad(options) {
-			uni.setNavigationBarTitle({
-			    title: options.title
-			});
+		onLoad({title}) {
+			this.setNavigationBarTitle(title)
 		},
 		methods:{
 			close(){

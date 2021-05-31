@@ -55,6 +55,10 @@
 						name: '空白栏（blank-bar）',
 						url: '/pages/components/blank-bar/blank-bar'
 					},
+					{
+						name: '信号（signal）',
+						url: '/pages/components/signal/signal'
+					},
 				],
 				toolList: [
 					{
