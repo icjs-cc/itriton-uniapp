@@ -72,6 +72,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/components/signal/signal",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
