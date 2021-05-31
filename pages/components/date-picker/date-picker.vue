@@ -18,10 +18,8 @@
 				isShow: false,
 			}
 		},
-		onLoad(options) {
-			uni.setNavigationBarTitle({
-			    title: options.title
-			});
+		onLoad({title}) {
+			this.setNavigationBarTitle(title)
 		},
 		methods: {
 			confirm(e){
