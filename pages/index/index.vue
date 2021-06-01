@@ -29,52 +29,7 @@
 <script>
 	export default {
 		data() {
-			return {
-				baseList: [
-					{
-						name: '日期选择器（date-picker）',
-						url: '/pages/components/date-picker/date-picker'
-					},
-					{
-						name: '加载中（spin）',
-						url: '/pages/components/spin/spin'
-					},
-					{
-						name: '悬浮按钮（fabutton）',
-						url: '/pages/components/fabutton/fabutton'
-					},
-					{
-						name: '右上角引导（mp-tips）',
-						url: '/pages/components/mp-tips/mp-tips'
-					},
-					{
-						name: '获取验证码（captcha）',
-						url: '/pages/components/captcha/captcha'
-					},
-					{
-						name: '空白栏（blank-bar）',
-						url: '/pages/components/blank-bar/blank-bar'
-					},
-					{
-						name: '信号（signal）',
-						url: '/pages/components/signal/signal'
-					},
-				],
-				toolList: [
-					{
-						name: '数据缓存（storage）',
-						url: '/pages/tools/storage/storage'
-					},
-					{
-						name: '定时缓存（cache）',
-						url: '/pages/tools/cache/cache'
-					},
-					{
-						name: '剪贴板（clipboard）',
-						url: '/pages/tools/copy/copy'
-					},
-				]
-			}
+			return {}
 		}
 	}
 </script>
