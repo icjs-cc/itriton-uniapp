@@ -30,6 +30,10 @@ export default {
 					name: '信号（signal）',
 					url: '/pages/components/signal/signal'
 				},
+				{
+					name: '水印（watermark）',
+					url: '/pages/components/watermark/watermark'
+				},
 			],
 			toolList: [
 				{

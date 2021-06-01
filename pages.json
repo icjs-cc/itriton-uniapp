@@ -81,6 +81,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/components/watermark/watermark",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
