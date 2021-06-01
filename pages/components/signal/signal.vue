@@ -13,7 +13,6 @@
 
 <script>
 	export default {
-		data() {},
 		onLoad({title}) {
 			this.setNavigationBarTitle(title)
 		},
