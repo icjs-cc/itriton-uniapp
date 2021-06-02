@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view id="fabutton" class="fabutton"
-			:style="[{left:`${left}px`},{top:`${top}px`},{background:`${background}`}]"
+			:style="[{left:`${fbuttonLeft}px`},{top:`${fbuttonTop}px`},{background:`${background}`},{width: `${width}rpx`},{height: `${height}rpx`}]"
 		  @touchstart="touchstart"
 			@touchmove.stop.prevent="touchmove" @touchend="touchend" @click.stop.prevent="click"
 			:class="{transition: isDock && !isMove }">
@@ -29,13 +29,27 @@
 				type: String,
 				default: ''
 			},
+			// 宽
+			width: {
+				type: Number,
+				default: 80
+			},
+			// 高
+			height: {
+				type: Number,
+				default: 80
+			},
+			// 左边距离
+			left: Number,
+			// 顶部距离
+			top: Number,
 		},
 		data() {
 			return {
-				top: 0,
-				left: 0,
-				width: 0,
-				height: 0,
+				fbuttonTop: 0,
+				fbuttonLeft: 0,
+				fbuttonWidth: 0,
+				fbuttonHeight: 0,
 				offsetWidth: 0,
 				offsetHeight: 0,
 				windowWidth: 0,
@@ -58,12 +72,14 @@
 			}
 			const query = uni.createSelectorQuery().in(this);
 			query.select('#fabutton').boundingClientRect(data => {
-				this.width = data.width;
-				this.height = data.height;
+				this.fbuttonWidth = data.width;
+				this.fbuttonHeight = data.height;
 				this.offsetWidth = data.width / 2;
 				this.offsetHeight = data.height / 2;
-				this.left = this.windowWidth - this.width - this.edge;
-				this.top = this.windowHeight - this.height - this.edge;
+				if(this.left) this.fbuttonLeft = this.left
+				else this.fbuttonLeft = this.windowWidth - this.fbuttonWidth - this.edge;
+				if(this.top) this.fbuttonTop = this.top
+				else this.fbuttonTop = this.windowHeight - this.fbuttonHeight - this.edge;
 			}).exec();
 		},
 		methods: {
@@ -80,29 +96,29 @@
 				}
 
 				this.isMove = true;
-				this.left = e.touches[0].clientX - this.offsetWidth;
+				this.fbuttonLeft = e.touches[0].clientX - this.offsetWidth;
 				let clientY = e.touches[0].clientY - this.offsetHeight;
 				// #ifdef H5
-				clientY += this.height;
+				clientY += this.fbuttonHeight;
 				// #endif
-				let edgeBottom = this.windowHeight - this.height - this.edge;
+				let edgeBottom = this.windowHeight - this.fbuttonHeight - this.edge;
 
 				// 上下触及边界
 				if (clientY < this.edge) {
-					this.top = this.edge;
+					this.fbuttonTop = this.edge;
 				} else if (clientY > edgeBottom) {
-					this.top = edgeBottom;
+					this.fbuttonTop = edgeBottom;
 				} else {
-					this.top = clientY
+					this.fbuttonTop = clientY
 				}
 			},
 			touchend(e) {
 				if (this.isDock) {
-					let edgeRigth = this.windowWidth - this.width - this.edge;
-					if (this.left < this.windowWidth / 2 - this.offsetWidth) {
-						this.left = this.edge;
+					let edgeRigth = this.windowWidth - this.fbuttonWidth - this.edge;
+					if (this.fbuttonLeft < this.windowWidth / 2 - this.offsetWidth) {
+						this.fbuttonLeft = this.edge;
 					} else {
-						this.left = edgeRigth;
+						this.fbuttonLeft = edgeRigth;
 					}
 				}
 				this.isMove = false;
@@ -117,8 +133,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 80upx;
-		height: 80upx;
 		border-radius: 50%;
 		position: fixed;
 		background-color: $c-type-primary;
