@@ -25,10 +25,8 @@
 		data() {
 			return {}
 		},
-		onLoad(options) {
-			uni.setNavigationBarTitle({
-			    title: options.title
-			});
+		onLoad({title}) {
+			this.setNavigationBarTitle(title)
 		},
 		methods: {
 			setStorage(){

@@ -16,10 +16,8 @@
 
 <script>
 	export default {
-		onLoad(options) {
-			uni.setNavigationBarTitle({
-			    title: options.title
-			});
+		onLoad({title}) {
+			this.setNavigationBarTitle(title)
 		},
 		methods:{
 			setClipboardData(){

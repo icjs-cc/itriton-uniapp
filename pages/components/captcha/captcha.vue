@@ -20,10 +20,12 @@
 				second: 20
 			}
 		},
-		onLoad({title}) {
+		onLoad({
+			title
+		}) {
 			this.setNavigationBarTitle(title)
 		},
-		methods:{
+		methods: {
 			handleSend(val) {
 				this.isStart = val
 			}
@@ -32,6 +34,5 @@
 </script>
 
 <style lang="scss">
-	
-</style>
 
+</style>
