@@ -4,7 +4,7 @@
 			<view class="flex flex-direction justify-center">
 				<view class="flex align-center">
 					<image class="index-logo" src="/static/logo.png" mode=""></image>
-					<view class="index-title text-bold">Ldcake UI</view>
+					<view class="index-title text-bold">LDCake 组件库</view>
 				</view>
 				<view class="text-df text-grey mt-10">基于uni-app的轻量、可靠UI组件库</view>
 			</view>
@@ -44,7 +44,7 @@
 		}
 
 		&-title {
-			font-size: 60rpx;
+			font-size: 48rpx;
 			margin-left: 20rpx;
 		}
 

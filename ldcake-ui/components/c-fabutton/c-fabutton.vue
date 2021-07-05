@@ -1,5 +1,5 @@
 <template>
-	<view id="fabutton" class="fabutton"
+	<view id="fabutton" class="c-fabutton"
 		:style="[{left:`${fbuttonLeft}px`},{top:`${fbuttonTop}px`},{background:`${background}`},{width: `${width}rpx`},{height: `${height}rpx`},{zIndex: `${zIndex}`}]"
 		@touchstart="touchstart"
 		@touchmove.stop.prevent="touchmove" @touchend="touchend" @click.stop.prevent="click"
@@ -131,7 +131,7 @@
 </script>
 
 <style lang="scss">
-	.fabutton {
+	.c-fabutton {
 		display: flex;
 		justify-content: center;
 		align-items: center;

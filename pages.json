@@ -90,6 +90,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/components/highlight/highlight",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
