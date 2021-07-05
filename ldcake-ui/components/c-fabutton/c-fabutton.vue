@@ -1,12 +1,10 @@
 <template>
-	<view>
-		<view id="fabutton" class="fabutton"
-			:style="[{left:`${fbuttonLeft}px`},{top:`${fbuttonTop}px`},{background:`${background}`},{width: `${width}rpx`},{height: `${height}rpx`}]"
-		  @touchstart="touchstart"
-			@touchmove.stop.prevent="touchmove" @touchend="touchend" @click.stop.prevent="click"
-			:class="{transition: isDock && !isMove }">
-			<slot></slot>
-		</view>
+	<view id="fabutton" class="c-fabutton"
+		:style="[{left:`${fbuttonLeft}px`},{top:`${fbuttonTop}px`},{background:`${background}`},{width: `${width}rpx`},{height: `${height}rpx`},{zIndex: `${zIndex}`}]"
+		@touchstart="touchstart"
+		@touchmove.stop.prevent="touchmove" @touchend="touchend" @click.stop.prevent="click"
+		:class="{transition: isDock && !isMove }">
+		<slot></slot>
 	</view>
 </template>
 
@@ -33,6 +31,10 @@
 			width: {
 				type: Number,
 				default: 80
+			},
+			zIndex: {
+				type: Number,
+				default: 0,
 			},
 			// 高
 			height: {
@@ -129,14 +131,13 @@
 </script>
 
 <style lang="scss">
-	.fabutton {
+	.c-fabutton {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
 		position: fixed;
 		background-color: $c-type-primary;
-		z-index: 999999;
 
 		&.transition {
 			transition: left .3s ease, top .3s ease;
