@@ -34,6 +34,10 @@ export default {
 					name: '水印（watermark）',
 					url: '/pages/components/watermark/watermark'
 				},
+				{
+					name: '关键字高亮（highlight）',
+					url: '/pages/components/highlight/highlight'
+				},
 			],
 			toolList: [
 				{
