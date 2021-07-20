@@ -38,6 +38,10 @@ export default {
 					name: '关键字高亮（highlight）',
 					url: '/pages/components/highlight/highlight'
 				},
+				{
+					name: '开发者模式（developer）',
+					url: '/pages/components/developer/developer'
+				},
 			],
 			toolList: [
 				{
