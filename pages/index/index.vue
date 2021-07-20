@@ -17,11 +17,12 @@
 				<text class="index__content-arrow"></text>
 			</navigator>
 			<view class="text-gray text-df mb-20">工具库</view>
-			<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`"
-					v-for="(item,index) in toolList" :key="`tool_${index}`">
-				<text>{{item.name}}</text>
-				<text class="index__content-arrow"></text>
-			</navigator>
+			<view v-for="(item,index) in toolList" :key="item.url">
+				<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`">
+					<text>{{item.name}}</text>
+					<text class="index__content-arrow"></text>
+				</navigator>
+			</view>
 		</view>
 	</view>
 </template>

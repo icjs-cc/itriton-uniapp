@@ -29,7 +29,7 @@
 						label: '自定义服务器(非开发人员禁用)',
 						custom: true
 				}],
-				defaultValue: 'http://192.168.1.4'
+				defaultValue: ''
 			}
 		},
 		onLoad({title}) {
