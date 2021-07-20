@@ -69,6 +69,7 @@
 		},
 		data() {
 			return {
+				developerList: [],
 				clickNum: 0,
 				isShow: false,
 				defaultColor: '',
@@ -77,6 +78,7 @@
 			}
 		},
 		mounted() {
+			this.developerList = this.list
 			this.defaultColor = this.$c.color.primary;
 			this.reset()
 		},
@@ -89,31 +91,41 @@
 			},
 			// 处理当前环境状态
 			handleStatus(index){
-				if(!this.list.length){
+				if(!this.developerList.length){
 					return
 				}
-				if(this.list[index].custom){
+				if(this.developerList[index].custom){
 					this.isCustom = true
 				}else{
 					this.isCustom = false
 				}
-				this.list.forEach((item, lIndex)=>{
-					this.$set(this.list[lIndex], 'checked' , false)
+				this.developerList.forEach((item, lIndex)=>{
+					this.$set(this.developerList[lIndex], 'checked' , false)
 				})
-				this.customValue = this.list[index].value
-				this.$set(this.list[index], 'checked' , true)
+				this.customValue = this.developerList[index].value
+				this.$set(this.developerList[index], 'checked' , true)
 			},
 			getIndexByName(name){
-				let existIndex = 0
-				this.list.forEach((item, index)=>{
+				let existIndex = -1
+				let customIndex = -1
+				this.developerList.forEach((item, index)=>{
 					if(item.value === name){
 						existIndex = index
 					}
+					if(item.custom){
+						customIndex = index
+					}
 				})
+				if(existIndex===-1){
+					if(customIndex!==-1){
+						this.$set(this.developerList[customIndex], 'value' , this.defaultValue)
+					}
+					existIndex = customIndex===-1?0:customIndex
+				}
 				return existIndex
 			},
 			open(){
-				if(!this.list.length){
+				if(!this.developerList.length){
 					console.warn("暂未设置开发者模式数据")
 					return
 				}
@@ -204,6 +216,7 @@
 			margin-top: 20rpx;
 			padding: 0 10rpx;
 			border-radius: 10rpx;
+			font-size: 26rpx;
 		}
 		
 		&-padding{

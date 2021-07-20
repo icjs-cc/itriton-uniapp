@@ -29,10 +29,11 @@
 						label: '自定义服务器(非开发人员禁用)',
 						custom: true
 				}],
-				defaultValue: 'http://192.168.1.2'
+				defaultValue: 'http://192.168.1.4'
 			}
 		},
 		onLoad({title}) {
+			this.defaultValue = this.$c.getStorage('baseUrl')
 			this.setNavigationBarTitle(title)
 		},
 		methods: {
@@ -41,6 +42,7 @@
 			},
 			confirm(val){
 				this.defaultValue = val
+				this.$c.setStorage('baseUrl', val)
 			}
 		}
 	}
