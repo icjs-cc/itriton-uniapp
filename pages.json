@@ -63,43 +63,42 @@
 			"enablePullDownRefresh": false
 		}
 
-	}    ,{
-            "path" : "pages/components/blank-bar/blank-bar",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/signal/signal",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/watermark/watermark",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/components/highlight/highlight",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/components/blank-bar/blank-bar",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/signal/signal",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/watermark/watermark",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/highlight/highlight",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/components/developer/developer",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "绿豆糕组件库",
