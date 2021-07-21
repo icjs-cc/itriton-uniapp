@@ -31,7 +31,7 @@ export const getClipboardData = () => {
  * @param {string} data 需要设置的内容
  * @returns {Promise<string>} 设置的内容
  */
-export const setClipboardData = (data) => {
+export const setClipboardData = (data, lang) => {
 	return new Promise((success, fail) => {
 		// #ifndef H5
 		const res = uni.getSystemInfoSync();
@@ -62,7 +62,7 @@ export const setClipboardData = (data) => {
 				'zh-SG': '內容已復制'
 			}
 			try {
-				title = titleMap[res.language]
+				title = titleMap[lang||res.language]
 				if (isEmpty(title)) {
 					title = 'Content copied'
 				}
