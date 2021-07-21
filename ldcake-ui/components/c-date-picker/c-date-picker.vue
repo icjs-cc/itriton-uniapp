@@ -3,13 +3,13 @@
 		<view :class="{'datetimePickerMask':showPicker}" @click="maskClose" @touchmove.stop.prevent="returnHandle">
 			<view class="c-datetime-picker__content" :class="{'datetimePickerShow':showPicker}">
 				<view class="c-datetime-picker__header" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<input type="text" disabled :placeholder="startPlaceholder" :value="startDate" 
+					<input class="c-datetime-picker__header-input" type="text" disabled :placeholder="startPlaceholder" :value="startDate" 
 						   :style="{color:dateType=='startDate'?(themeColor||defaultColor):'#282828','border-color':dateType=='startDate'?(themeColor||defaultColor):'transparent'}"
 						   @tap="changeDateType('startDate')">
 					<view class="c-datetime-picker__header-center">
 						{{rangeSeparator}}
 					</view>
-					<input type="text" disabled :placeholder="endPlaceholder" 
+					<input class="c-datetime-picker__header-input" type="text" disabled :placeholder="endPlaceholder" 
 						   :style="{color:dateType=='endDate'?(themeColor||defaultColor):'#282828','border-color':dateType=='endDate'?(themeColor||defaultColor):'transparent'}"
 						   :value="endDate" @tap="changeDateType('endDate')">
 				</view>
@@ -27,8 +27,8 @@
 					</template>
 				</picker-view>
 				<view class="c-datetime-picker__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<view class="c-datetime-picker__footer-cancel" @click="reset">重置</view>
-					<view class="c-datetime-picker__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]" @click="confirm">确认</view>
+					<view class="c-datetime-picker__footer-view c-datetime-picker__footer-cancel" @click="reset">重置</view>
+					<view class="c-datetime-picker__footer-view c-datetime-picker__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]" @click="confirm">确认</view>
 				</view>
 			</view>
 		</view>
@@ -388,7 +388,7 @@
 				border-bottom: 4rpx solid transparent;
 			}
 			
-			input{
+			&-input{
 				width: 250rpx;
 				height: 90rpx;
 				margin: 0 46rpx;
@@ -433,7 +433,7 @@
 			font-size: 36rpx;
 			line-height: 90rpx;
 			
-			view {
+			&-view {
 				display: block;
 				flex: 1;
 				text-align: center;

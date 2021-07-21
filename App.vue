@@ -1,5 +1,12 @@
 <script>
-	export default {}
+	export default {
+		onLaunch() {
+			const baseUrl = this.$c.getStorage('baseUrl')
+			if(this.$c.isEmpty(baseUrl)){
+				this.$c.setStorage('baseUrl', 'http://192.168.1.1')
+			}
+		}
+	}
 </script>
 
 <style lang="scss">
