@@ -197,7 +197,6 @@
 							title = 'You can enter the developer mode in ${num} step'
 						}
 					} catch (e) {
-						console.warn(e)
 						title = 'You can enter the developer mode in ${num} step'
 					}
 					$showToast({
