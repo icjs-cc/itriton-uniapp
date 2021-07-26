@@ -28,7 +28,8 @@
 
 <script>
 	import {
-		isEmpty
+		isEmpty,
+		$showToast
 	} from "../../libs/utils/common.js"
 	export default {
 		name: "c-developer",
@@ -87,7 +88,6 @@
 				customValue: '',
 				isCustom: false,
 				systemInfo: {},
-				isLock: false,
 				warningMap: {
 					'zh-CN': '暂未设置开发者模式数据',
 					'zh-US': '暫未設置開發者模式數據',
@@ -196,9 +196,9 @@
 					} catch (e) {
 						title = 'You can enter the developer mode in ${num} step'
 					}
-					uni.showToast({
+					$showToast({
 						title: title.replace('${num}', (countNum - this.clickNum)),
-						icon: "none",
+						mask: false,
 						duration: 800
 					});
 				}
@@ -214,17 +214,8 @@
 					} catch (e) {
 						developerTitle = 'You are in developer mode now'
 					}
-					this.isLock = true
-					setTimeout(()=>{
-						this.isLock = false
-					}, 3000)
-					uni.showToast({
-						title: developerTitle,
-						icon: "none",
-						duration: 3000,
-						complete: () => {
-							this.isShow = true
-						}
+					$showToast({title:developerTitle}).then(()=>{
+						this.isShow = true
 					})
 				}
 				setTimeout(() => {
@@ -232,7 +223,7 @@
 				}, this.effectiveTime * 1000)
 			},
 			close() {
-				if(!this.isLock) this.isShow = false
+				this.isShow = false
 			},
 			reset() {
 				this.isCustom = false
@@ -250,11 +241,7 @@
 					} catch (e) {
 						verificationTitle = 'Please fill in custom data'
 					}
-					uni.showToast({
-						title: verificationTitle,
-						icon: "none",
-						duration: 3000
-					})
+					$showToast({title:verificationTitle})
 					return
 				}
 				this.close()
