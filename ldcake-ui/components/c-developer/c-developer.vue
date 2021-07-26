@@ -124,7 +124,6 @@
 		},
 		mounted() {
 			this.systemInfo = uni.getSystemInfoSync();
-			console.log(this.systemInfo)
 			this.developerList = this.list
 			this.defaultColor = this.$c.color.primary;
 			this.reset()
