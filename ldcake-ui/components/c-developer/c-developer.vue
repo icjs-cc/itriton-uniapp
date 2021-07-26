@@ -3,7 +3,7 @@
 		<view :class="{'developerMask': isShow}" @click="close" @touchmove.stop.prevent="returnHandle">
 			<view class="c-developer__content" :class="{'developerShow':isShow}" @touchmove.stop.prevent="returnHandle"
 				@tap.stop="returnHandle">
-				<view class="c-developer__content-title">开发者模式</view>
+				<view class="c-developer__content-title">{{title}}</view>
 				<view class="c-developer__content-padding">
 					<radio-group @change="radioChange">
 						<label class="c-developer__content-cell" v-for="(item,index) in developerList" :key="index"
@@ -17,9 +17,9 @@
 						placeholder="请输入自定义服务器地址(注意使用英文标点符号)" type="text" v-model="customValue" v-if="isCustom" />
 				</view>
 				<view class="c-developer__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<view class="c-developer__footer-view c-developer__footer-cancel" @click="reset">重置</view>
+					<view class="c-developer__footer-view c-developer__footer-cancel" @click="reset">{{footer.reset}}</view>
 					<view class="c-developer__footer-view c-developer__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]"
-						@click="confirm">确认</view>
+						@click="confirm">{{footer.confirm}}</view>
 				</view>
 			</view>
 		</view>
@@ -88,6 +88,42 @@
 				customValue: '',
 				isCustom: false,
 				language: '',
+				title: '',
+				footer: {},
+				titleMap: {
+					'zhCN': '开发者模式',
+					'zhUS': '開發者模式',
+					'zhTW': '開發者模式',
+					'zhHK': '開發者模式',
+					'zhMO': '開發者模式',
+					'zhSG': '開發者模式'
+				},
+				footerMap: {
+					'zhCN': {
+						reset: '重置',
+						confirm: '确认'
+					},
+					'zhUS': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhTW': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhHK': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhMO': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhSG': {
+						reset: '重置',
+						confirm: '確定'
+					},
+				},
 				warningMap: {
 					'zhCN': '暂未设置开发者模式数据',
 					'zhUS': '暫未設置開發者模式數據',
@@ -126,10 +162,34 @@
 			this.language = this.formatLanguage(uni.getSystemInfoSync().language)
 			this.developerList = this.list
 			this.defaultColor = this.$c.color.primary
+			this.handleStaticValue()
 			this.reset()
 		},
 		methods: {
 			returnHandle() {},
+			handleStaticValue(){
+				let title = ''
+				let footer = {}
+				try {
+					title = this.titleMap[this.formatLanguage(this.lang)||this.language]
+					footer = this.footerMap[this.formatLanguage(this.lang)||this.language]
+					if (isEmpty(title)) {
+						title = 'Developer Mode'
+						footer = {
+							reset: 'Reset',
+							confirm: 'Confirm'
+						}
+					}
+				} catch (e) {
+					title = 'Developer Mode'
+					footer = {
+						reset: 'Reset',
+						confirm: 'Confirm'
+					}
+				}
+				this.title = title
+				this.footer = footer
+			},
 			formatLanguage(val){
 				return val.replace('-','').replace('_','')
 			},
