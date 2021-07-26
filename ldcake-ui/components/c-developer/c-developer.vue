@@ -27,6 +27,9 @@
 </template>
 
 <script>
+	import {
+		isEmpty
+	} from "../../libs/utils/common.js"
 	export default {
 		name: "c-developer",
 		props: {
@@ -69,6 +72,10 @@
 			defaultValue: {
 				type: String,
 				default: ''
+			},
+			lang: {
+				type: String,
+				default: ''
 			}
 		},
 		data() {
@@ -79,9 +86,45 @@
 				defaultColor: '',
 				customValue: '',
 				isCustom: false,
+				systemInfo: {},
+				isLock: false,
+				warningMap: {
+					'zh-CN': '暂未设置开发者模式数据',
+					'zh-US': '暫未設置開發者模式數據',
+					'zh-TW': '暫未設置開發者模式數據',
+					'zh-HK': '暫未設置開發者模式數據',
+					'zh-MO': '暫未設置開發者模式數據',
+					'zh-SG': '暫未設置開發者模式數據'
+				},
+				countDownTitleMap: {
+					'zh-CN': '只需${num}步操作即可进入开发者模式',
+					'zh-US': '只需${num}步操作即可進入開發者模式',
+					'zh-TW': '只需${num}步操作即可進入開發者模式',
+					'zh-HK': '只需${num}步操作即可進入開發者模式',
+					'zh-MO': '只需${num}步操作即可進入開發者模式',
+					'zh-SG': '只需${num}步操作即可進入開發者模式'
+				},
+				developerTitleMap: {
+					'zh-CN': '您现在处于开发者模式',
+					'zh-US': '您現在處於開發者模式',
+					'zh-TW': '您現在處於開發者模式',
+					'zh-HK': '您現在處於開發者模式',
+					'zh-MO': '您現在處於開發者模式',
+					'zh-SG': '您現在處於開發者模式'
+				},
+				verificationTitleMap: {
+					'zh-CN': '请填写自定义数据',
+					'zh-US': '請填寫自定義數據',
+					'zh-TW': '請填寫自定義數據',
+					'zh-HK': '請填寫自定義數據',
+					'zh-MO': '請填寫自定義數據',
+					'zh-SG': '請填寫自定義數據'
+				}
 			}
 		},
 		mounted() {
+			this.systemInfo = uni.getSystemInfoSync();
+			console.log(this.systemInfo)
 			this.developerList = this.list
 			this.defaultColor = this.$c.color.primary;
 			this.reset()
@@ -130,14 +173,32 @@
 			},
 			open() {
 				if (!this.developerList.length) {
-					console.warn("暂未设置开发者模式数据")
+					let warn = ''
+					try {
+						warn = this.warningMap[this.lang||this.systemInfo.language]
+						if (isEmpty(warn)) {
+							warn = 'Developer mode data is not set yet'
+						}
+					} catch (e) {
+						warn = 'Developer mode data is not set yet'
+					}
+					console.warn(warn)
 					return
 				}
 				this.clickNum++
 				let countNum = this.total
 				if (this.clickNum > (countNum - countNum / 2) && this.clickNum < countNum) {
+					let title = ''
+					try {
+						title = this.countDownTitleMap[this.lang||this.systemInfo.language]
+						if (isEmpty(title)) {
+							title = 'You can enter the developer mode in ${num} step'
+						}
+					} catch (e) {
+						title = 'You can enter the developer mode in ${num} step'
+					}
 					uni.showToast({
-						title: '只需' + (countNum - this.clickNum) + '步操作即可进入开发者模式',
+						title: title.replace('${num}', (countNum - this.clickNum)),
 						icon: "none",
 						duration: 800
 					});
@@ -145,8 +206,21 @@
 				if (this.clickNum >= countNum) {
 					this.clickNum = 0
 					this.reset()
+					let developerTitle = ''
+					try {
+						developerTitle = this.developerTitleMap[this.lang||this.systemInfo.language]
+						if (isEmpty(developerTitle)) {
+							developerTitle = 'You are in developer mode now'
+						}
+					} catch (e) {
+						developerTitle = 'You are in developer mode now'
+					}
+					this.isLock = true
+					setTimeout(()=>{
+						this.isLock = false
+					}, 3000)
 					uni.showToast({
-						title: '您现在处于开发者模式',
+						title: developerTitle,
 						icon: "none",
 						duration: 3000,
 						complete: () => {
@@ -159,7 +233,7 @@
 				}, this.effectiveTime * 1000)
 			},
 			close() {
-				this.isShow = false
+				if(!this.isLock) this.isShow = false
 			},
 			reset() {
 				this.isCustom = false
@@ -168,8 +242,17 @@
 			},
 			confirm() {
 				if (this.$c.isEmpty(this.customValue) && this.isCustom) {
+					let verificationTitle = ''
+					try {
+						verificationTitle = this.verificationTitleMap[this.lang||this.systemInfo.language]
+						if (isEmpty(verificationTitle)) {
+							verificationTitle = 'Please fill in custom data'
+						}
+					} catch (e) {
+						verificationTitle = 'Please fill in custom data'
+					}
 					uni.showToast({
-						title: '请填写自定义数据',
+						title: verificationTitle,
 						icon: "none",
 						duration: 3000
 					})
