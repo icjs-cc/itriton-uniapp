@@ -123,13 +123,16 @@
 			}
 		},
 		mounted() {
-			this.language = (uni.getSystemInfoSync().language).replace('-','').replace('_','')
+			this.language = this.formatLanguage(uni.getSystemInfoSync().language)
 			this.developerList = this.list
 			this.defaultColor = this.$c.color.primary
 			this.reset()
 		},
 		methods: {
 			returnHandle() {},
+			formatLanguage(val){
+				return val.replace('-','').replace('_','')
+			},
 			radioChange(e) {
 				const value = e.detail.value
 				const index = this.getIndexByName(value)
@@ -174,7 +177,7 @@
 				if (!this.developerList.length) {
 					let warn = ''
 					try {
-						warn = this.warningMap[this.lang||this.language]
+						warn = this.warningMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(warn)) {
 							warn = 'Developer mode data is not set yet'
 						}
@@ -189,10 +192,7 @@
 				if (this.clickNum > (countNum - countNum / 2) && this.clickNum < countNum) {
 					let title = ''
 					try {
-						title = this.countDownTitleMap[this.lang||this.language]
-						console.log(this.lang)
-						console.log(this.language)
-						console.log(this.countDownTitleMap[this.lang||this.language])
+						title = this.countDownTitleMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(title)) {
 							title = 'You can enter the developer mode in ${num} step'
 						}
@@ -211,7 +211,7 @@
 					this.reset()
 					let developerTitle = ''
 					try {
-						developerTitle = this.developerTitleMap[this.lang||this.language]
+						developerTitle = this.developerTitleMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(developerTitle)) {
 							developerTitle = 'You are in developer mode now'
 						}
@@ -238,7 +238,7 @@
 				if (this.$c.isEmpty(this.customValue) && this.isCustom) {
 					let verificationTitle = ''
 					try {
-						verificationTitle = this.verificationTitleMap[this.lang||this.language]
+						verificationTitle = this.verificationTitleMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(verificationTitle)) {
 							verificationTitle = 'Please fill in custom data'
 						}
