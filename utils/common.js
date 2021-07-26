@@ -15,7 +15,6 @@ export const $showToast = (title) => {
 			}
 		})
 	})
-
 }
 
 export const $hideToast = () => {
