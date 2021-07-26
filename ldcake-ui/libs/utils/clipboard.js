@@ -51,7 +51,7 @@ export const setClipboardData = (data, lang) => {
 			textarea.select()
 			textarea.setSelectionRange(0, data.length)
 			document.execCommand('copy')
-			const res = uni.getSystemInfoSync();
+			const res = uni.getSystemInfoSync()
 			let title = 'Content copied'
 			const titleMap = {
 				'zh-CN': '内容已复制',

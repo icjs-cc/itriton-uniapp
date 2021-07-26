@@ -3,7 +3,7 @@
 		<view :class="{'developerMask': isShow}" @click="close" @touchmove.stop.prevent="returnHandle">
 			<view class="c-developer__content" :class="{'developerShow':isShow}" @touchmove.stop.prevent="returnHandle"
 				@tap.stop="returnHandle">
-				<view class="c-developer__content-title">开发者模式</view>
+				<view class="c-developer__content-title">{{title}}</view>
 				<view class="c-developer__content-padding">
 					<radio-group @change="radioChange">
 						<label class="c-developer__content-cell" v-for="(item,index) in developerList" :key="index"
@@ -17,9 +17,9 @@
 						placeholder="请输入自定义服务器地址(注意使用英文标点符号)" type="text" v-model="customValue" v-if="isCustom" />
 				</view>
 				<view class="c-developer__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<view class="c-developer__footer-view c-developer__footer-cancel" @click="reset">重置</view>
+					<view class="c-developer__footer-view c-developer__footer-cancel" @click="reset">{{footer.reset}}</view>
 					<view class="c-developer__footer-view c-developer__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]"
-						@click="confirm">确认</view>
+						@click="confirm">{{footer.confirm}}</view>
 				</view>
 			</view>
 		</view>
@@ -28,7 +28,8 @@
 
 <script>
 	import {
-		isEmpty
+		isEmpty,
+		$showToast
 	} from "../../libs/utils/common.js"
 	export default {
 		name: "c-developer",
@@ -86,50 +87,112 @@
 				defaultColor: '',
 				customValue: '',
 				isCustom: false,
-				systemInfo: {},
-				isLock: false,
+				language: '',
+				title: '',
+				footer: {},
+				titleMap: {
+					'zhCN': '开发者模式',
+					'zhUS': '開發者模式',
+					'zhTW': '開發者模式',
+					'zhHK': '開發者模式',
+					'zhMO': '開發者模式',
+					'zhSG': '開發者模式'
+				},
+				footerMap: {
+					'zhCN': {
+						reset: '重置',
+						confirm: '确认'
+					},
+					'zhUS': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhTW': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhHK': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhMO': {
+						reset: '重置',
+						confirm: '確定'
+					},
+					'zhSG': {
+						reset: '重置',
+						confirm: '確定'
+					},
+				},
 				warningMap: {
-					'zh-CN': '暂未设置开发者模式数据',
-					'zh-US': '暫未設置開發者模式數據',
-					'zh-TW': '暫未設置開發者模式數據',
-					'zh-HK': '暫未設置開發者模式數據',
-					'zh-MO': '暫未設置開發者模式數據',
-					'zh-SG': '暫未設置開發者模式數據'
+					'zhCN': '暂未设置开发者模式数据',
+					'zhUS': '暫未設置開發者模式數據',
+					'zhTW': '暫未設置開發者模式數據',
+					'zhHK': '暫未設置開發者模式數據',
+					'zhMO': '暫未設置開發者模式數據',
+					'zhSG': '暫未設置開發者模式數據'
 				},
 				countDownTitleMap: {
-					'zh-CN': '只需${num}步操作即可进入开发者模式',
-					'zh-US': '只需${num}步操作即可進入開發者模式',
-					'zh-TW': '只需${num}步操作即可進入開發者模式',
-					'zh-HK': '只需${num}步操作即可進入開發者模式',
-					'zh-MO': '只需${num}步操作即可進入開發者模式',
-					'zh-SG': '只需${num}步操作即可進入開發者模式'
+					'zhCN': '只需${num}步操作即可进入开发者模式',
+					'zhUS': '只需${num}步操作即可進入開發者模式',
+					'zhTW': '只需${num}步操作即可進入開發者模式',
+					'zhHK': '只需${num}步操作即可進入開發者模式',
+					'zhMO': '只需${num}步操作即可進入開發者模式',
+					'zhSG': '只需${num}步操作即可進入開發者模式'
 				},
 				developerTitleMap: {
-					'zh-CN': '您现在处于开发者模式',
-					'zh-US': '您現在處於開發者模式',
-					'zh-TW': '您現在處於開發者模式',
-					'zh-HK': '您現在處於開發者模式',
-					'zh-MO': '您現在處於開發者模式',
-					'zh-SG': '您現在處於開發者模式'
+					'zhCN': '您现在处于开发者模式',
+					'zhUS': '您現在處於開發者模式',
+					'zhTW': '您現在處於開發者模式',
+					'zhHK': '您現在處於開發者模式',
+					'zhMO': '您現在處於開發者模式',
+					'zhSG': '您現在處於開發者模式'
 				},
 				verificationTitleMap: {
-					'zh-CN': '请填写自定义数据',
-					'zh-US': '請填寫自定義數據',
-					'zh-TW': '請填寫自定義數據',
-					'zh-HK': '請填寫自定義數據',
-					'zh-MO': '請填寫自定義數據',
-					'zh-SG': '請填寫自定義數據'
+					'zhCN': '请填写自定义数据',
+					'zhUS': '請填寫自定義數據',
+					'zhTW': '請填寫自定義數據',
+					'zhHK': '請填寫自定義數據',
+					'zhMO': '請填寫自定義數據',
+					'zhSG': '請填寫自定義數據'
 				}
 			}
 		},
 		mounted() {
-			this.systemInfo = uni.getSystemInfoSync();
+			this.language = this.formatLanguage(uni.getSystemInfoSync().language)
 			this.developerList = this.list
-			this.defaultColor = this.$c.color.primary;
+			this.defaultColor = this.$c.color.primary
+			this.handleStaticValue()
 			this.reset()
 		},
 		methods: {
 			returnHandle() {},
+			handleStaticValue(){
+				let title = ''
+				let footer = {}
+				try {
+					title = this.titleMap[this.formatLanguage(this.lang)||this.language]
+					footer = this.footerMap[this.formatLanguage(this.lang)||this.language]
+					if (isEmpty(title)) {
+						title = 'Developer Mode'
+						footer = {
+							reset: 'Reset',
+							confirm: 'Confirm'
+						}
+					}
+				} catch (e) {
+					title = 'Developer Mode'
+					footer = {
+						reset: 'Reset',
+						confirm: 'Confirm'
+					}
+				}
+				this.title = title
+				this.footer = footer
+			},
+			formatLanguage(val){
+				return val.replace('-','').replace('_','')
+			},
 			radioChange(e) {
 				const value = e.detail.value
 				const index = this.getIndexByName(value)
@@ -174,7 +237,7 @@
 				if (!this.developerList.length) {
 					let warn = ''
 					try {
-						warn = this.warningMap[this.lang||this.systemInfo.language]
+						warn = this.warningMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(warn)) {
 							warn = 'Developer mode data is not set yet'
 						}
@@ -189,16 +252,16 @@
 				if (this.clickNum > (countNum - countNum / 2) && this.clickNum < countNum) {
 					let title = ''
 					try {
-						title = this.countDownTitleMap[this.lang||this.systemInfo.language]
+						title = this.countDownTitleMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(title)) {
 							title = 'You can enter the developer mode in ${num} step'
 						}
 					} catch (e) {
 						title = 'You can enter the developer mode in ${num} step'
 					}
-					uni.showToast({
+					$showToast({
 						title: title.replace('${num}', (countNum - this.clickNum)),
-						icon: "none",
+						mask: false,
 						duration: 800
 					});
 				}
@@ -207,24 +270,15 @@
 					this.reset()
 					let developerTitle = ''
 					try {
-						developerTitle = this.developerTitleMap[this.lang||this.systemInfo.language]
+						developerTitle = this.developerTitleMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(developerTitle)) {
 							developerTitle = 'You are in developer mode now'
 						}
 					} catch (e) {
 						developerTitle = 'You are in developer mode now'
 					}
-					this.isLock = true
-					setTimeout(()=>{
-						this.isLock = false
-					}, 3000)
-					uni.showToast({
-						title: developerTitle,
-						icon: "none",
-						duration: 3000,
-						complete: () => {
-							this.isShow = true
-						}
+					$showToast({title:developerTitle}).then(()=>{
+						this.isShow = true
 					})
 				}
 				setTimeout(() => {
@@ -232,7 +286,7 @@
 				}, this.effectiveTime * 1000)
 			},
 			close() {
-				if(!this.isLock) this.isShow = false
+				this.isShow = false
 			},
 			reset() {
 				this.isCustom = false
@@ -243,18 +297,14 @@
 				if (this.$c.isEmpty(this.customValue) && this.isCustom) {
 					let verificationTitle = ''
 					try {
-						verificationTitle = this.verificationTitleMap[this.lang||this.systemInfo.language]
+						verificationTitle = this.verificationTitleMap[this.formatLanguage(this.lang)||this.language]
 						if (isEmpty(verificationTitle)) {
 							verificationTitle = 'Please fill in custom data'
 						}
 					} catch (e) {
 						verificationTitle = 'Please fill in custom data'
 					}
-					uni.showToast({
-						title: verificationTitle,
-						icon: "none",
-						duration: 3000
-					})
+					$showToast({title:verificationTitle})
 					return
 				}
 				this.close()
