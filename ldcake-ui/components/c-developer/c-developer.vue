@@ -87,45 +87,45 @@
 				defaultColor: '',
 				customValue: '',
 				isCustom: false,
-				systemInfo: {},
+				language: '',
 				warningMap: {
-					'zh-CN': '暂未设置开发者模式数据',
-					'zh-US': '暫未設置開發者模式數據',
-					'zh-TW': '暫未設置開發者模式數據',
-					'zh-HK': '暫未設置開發者模式數據',
-					'zh-MO': '暫未設置開發者模式數據',
-					'zh-SG': '暫未設置開發者模式數據'
+					'zhCN': '暂未设置开发者模式数据',
+					'zhUS': '暫未設置開發者模式數據',
+					'zhTW': '暫未設置開發者模式數據',
+					'zhHK': '暫未設置開發者模式數據',
+					'zhMO': '暫未設置開發者模式數據',
+					'zhSG': '暫未設置開發者模式數據'
 				},
 				countDownTitleMap: {
-					'zh-CN': '只需${num}步操作即可进入开发者模式',
-					'zh-US': '只需${num}步操作即可進入開發者模式',
-					'zh-TW': '只需${num}步操作即可進入開發者模式',
-					'zh-HK': '只需${num}步操作即可進入開發者模式',
-					'zh-MO': '只需${num}步操作即可進入開發者模式',
-					'zh-SG': '只需${num}步操作即可進入開發者模式'
+					'zhCN': '只需${num}步操作即可进入开发者模式',
+					'zhUS': '只需${num}步操作即可進入開發者模式',
+					'zhTW': '只需${num}步操作即可進入開發者模式',
+					'zhHK': '只需${num}步操作即可進入開發者模式',
+					'zhMO': '只需${num}步操作即可進入開發者模式',
+					'zhSG': '只需${num}步操作即可進入開發者模式'
 				},
 				developerTitleMap: {
-					'zh-CN': '您现在处于开发者模式',
-					'zh-US': '您現在處於開發者模式',
-					'zh-TW': '您現在處於開發者模式',
-					'zh-HK': '您現在處於開發者模式',
-					'zh-MO': '您現在處於開發者模式',
-					'zh-SG': '您現在處於開發者模式'
+					'zhCN': '您现在处于开发者模式',
+					'zhUS': '您現在處於開發者模式',
+					'zhTW': '您現在處於開發者模式',
+					'zhHK': '您現在處於開發者模式',
+					'zhMO': '您現在處於開發者模式',
+					'zhSG': '您現在處於開發者模式'
 				},
 				verificationTitleMap: {
-					'zh-CN': '请填写自定义数据',
-					'zh-US': '請填寫自定義數據',
-					'zh-TW': '請填寫自定義數據',
-					'zh-HK': '請填寫自定義數據',
-					'zh-MO': '請填寫自定義數據',
-					'zh-SG': '請填寫自定義數據'
+					'zhCN': '请填写自定义数据',
+					'zhUS': '請填寫自定義數據',
+					'zhTW': '請填寫自定義數據',
+					'zhHK': '請填寫自定義數據',
+					'zhMO': '請填寫自定義數據',
+					'zhSG': '請填寫自定義數據'
 				}
 			}
 		},
 		mounted() {
-			this.systemInfo = uni.getSystemInfoSync();
+			this.language = (uni.getSystemInfoSync().language).replace('-','').replace('_','')
 			this.developerList = this.list
-			this.defaultColor = this.$c.color.primary;
+			this.defaultColor = this.$c.color.primary
 			this.reset()
 		},
 		methods: {
@@ -174,7 +174,7 @@
 				if (!this.developerList.length) {
 					let warn = ''
 					try {
-						warn = this.warningMap[this.lang||this.systemInfo.language]
+						warn = this.warningMap[this.lang||this.language]
 						if (isEmpty(warn)) {
 							warn = 'Developer mode data is not set yet'
 						}
@@ -189,11 +189,15 @@
 				if (this.clickNum > (countNum - countNum / 2) && this.clickNum < countNum) {
 					let title = ''
 					try {
-						title = this.countDownTitleMap[this.lang||this.systemInfo.language]
+						title = this.countDownTitleMap[this.lang||this.language]
+						console.log(this.lang)
+						console.log(this.language)
+						console.log(this.countDownTitleMap[this.lang||this.language])
 						if (isEmpty(title)) {
 							title = 'You can enter the developer mode in ${num} step'
 						}
 					} catch (e) {
+						console.warn(e)
 						title = 'You can enter the developer mode in ${num} step'
 					}
 					$showToast({
@@ -207,7 +211,7 @@
 					this.reset()
 					let developerTitle = ''
 					try {
-						developerTitle = this.developerTitleMap[this.lang||this.systemInfo.language]
+						developerTitle = this.developerTitleMap[this.lang||this.language]
 						if (isEmpty(developerTitle)) {
 							developerTitle = 'You are in developer mode now'
 						}
@@ -234,7 +238,7 @@
 				if (this.$c.isEmpty(this.customValue) && this.isCustom) {
 					let verificationTitle = ''
 					try {
-						verificationTitle = this.verificationTitleMap[this.lang||this.systemInfo.language]
+						verificationTitle = this.verificationTitleMap[this.lang||this.language]
 						if (isEmpty(verificationTitle)) {
 							verificationTitle = 'Please fill in custom data'
 						}
