@@ -33,7 +33,7 @@
 			}
 		},
 		onLoad({title}) {
-			this.defaultValue = this.$t.getStorage('baseUrl')
+			this.defaultValue = this.$it.getStorage('baseUrl')
 			this.setNavigationBarTitle(title)
 		},
 		methods: {
@@ -42,7 +42,7 @@
 			},
 			confirm(val){
 				this.defaultValue = val
-				this.$t.setStorage('baseUrl', val)
+				this.$it.setStorage('baseUrl', val)
 			}
 		}
 	}

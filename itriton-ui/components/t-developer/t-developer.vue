@@ -161,7 +161,7 @@
 		mounted() {
 			this.language = this.formatLanguage(uni.getSystemInfoSync().language)
 			this.developerList = this.list
-			this.defaultColor = this.$t.color.primary
+			this.defaultColor = this.$it.color.primary
 			this.handleStaticValue()
 			this.reset()
 		},
@@ -294,7 +294,7 @@
 				this.handleStatus(index)
 			},
 			confirm() {
-				if (this.$t.isEmpty(this.customValue) && this.isCustom) {
+				if (this.$it.isEmpty(this.customValue) && this.isCustom) {
 					let verificationTitle = ''
 					try {
 						verificationTitle = this.verificationTitleMap[this.formatLanguage(this.lang)||this.language]

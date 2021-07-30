@@ -48,7 +48,7 @@
 			}
 		},
 		mounted() {
-			this.defaultColor = this.color||this.$t.color.primary
+			this.defaultColor = this.color||this.$it.color.primary
 			this.captchaTimer = this.second
 		},
 		watch:{

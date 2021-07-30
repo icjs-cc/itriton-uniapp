@@ -4,16 +4,16 @@
 			<view class="t-demo-title">演示缓存</view>
 			<view class="t-demo-area">
 				<view class="t-demo-result-line mt-0" @click="setStorage()">
-					设置缓存（this.$t.setStorage）
+					设置缓存（this.$it.setStorage）
 				</view>
 				<view class="t-demo-result-line" @click="getStorage()">
-					获取缓存（this.$t.getStorage）
+					获取缓存（this.$it.getStorage）
 				</view>
 				<view class="t-demo-result-line" @click="removeStorage()">
-					移除缓存（this.$t.removeStorage）
+					移除缓存（this.$it.removeStorage）
 				</view>
 				<view class="t-demo-result-line" @click="clearStorage()">
-					清除缓存（this.$t.clearStorage）
+					清除缓存（this.$it.clearStorage）
 				</view>
 			</view>
 		</view>
@@ -30,19 +30,19 @@
 		},
 		methods: {
 			setStorage(){
-				this.$t.setStorage("storage", "缓存")
+				this.$it.setStorage("storage", "缓存")
 				this.$showToast("设置缓存成功")
 			},
 			getStorage(){
-				const storage = this.$t.getStorage("storage")
+				const storage = this.$it.getStorage("storage")
 				this.$showToast(`缓存数据：${storage}`)
 			},
 			removeStorage(){
-				this.$t.removeStorage("storage")
+				this.$it.removeStorage("storage")
 				this.$showToast(`移除缓存成功`)
 			},
 			clearStorage(){
-				this.$t.clearStorage()
+				this.$it.clearStorage()
 				this.$showToast(`清除所有缓存成功`)
 			}
 		}
