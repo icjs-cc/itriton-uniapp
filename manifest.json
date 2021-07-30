@@ -1,5 +1,5 @@
 {
-    "name" : "ldcake-uniapp",
+    "name" : "itriton-uniapp",
     "appid" : "__UNI__9437254",
     "description" : "",
     "versionName" : "1.0.0",
@@ -69,16 +69,19 @@
         "enable" : false
     },
     "h5" : {
-        "title" : "绿豆糕组件库",
+        "title" : "iTriton组件库",
         "domain" : "",
         "router" : {
-            "base" : "/ldcake-ui/",
+            "base" : "/itriton-ui/",
             "mode" : "hash"
         },
         "optimization" : {
             "treeShaking" : {
-                "enable" : false
+                "enable" : true
             }
+        },
+        "devServer" : {
+            "https" : false
         }
     }
 }

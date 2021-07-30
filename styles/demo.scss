@@ -6,11 +6,11 @@ text {
 /* #endif */
 
 /* start--演示页面使用的统一样式--start */
-.c-demo {
+.t-demo {
 	padding: 50rpx 40rpx;
 }
 
-.c-demo-wrap {
+.t-demo-wrap {
 	border-width: 1rpx;
 	border-color: #ddd;
 	border-style: dashed;
@@ -19,16 +19,16 @@ text {
 	border-radius: 6rpx;
 }
 
-.c-demo-area {
+.t-demo-area {
 	text-align: center;
 }
 
-.c-no-demo-here {
-	color: $c-tips-color;
+.t-no-demo-here {
+	color: $t-tips-color;
 	font-size: 26rpx;
 }
 
-.c-demo-result-line {
+.t-demo-result-line {
 	border-width: 1px;
 	border-color: #ddd;
 	border-style: dashed;
@@ -36,7 +36,7 @@ text {
 	margin-top: 60rpx;
 	border-radius: 10rpx;
 	background-color: rgb(240, 240, 240);
-	color: $c-content-color;
+	color: $t-content-color;
 	font-size: 30rpx;
 	/* #ifndef APP-NVUE */
 	word-break: break-word;
@@ -46,24 +46,24 @@ text {
 
 }
 
-.c-demo-title,
-.c-config-title {
+.t-demo-title,
+.t-config-title {
 	text-align: center;
 	font-size: 32rpx;
 	font-weight: bold;
 	margin-bottom: 40rpx;
 }
 
-.c-config-item {
+.t-config-item {
 	margin-top: 50rpx;
 }
 
-.c-config-title {
+.t-config-title {
 	margin-top: 40rpx;
 	padding-bottom: 10rpx;
 }
 
-.c-item-title {
+.t-item-title {
 	position: relative;
 	font-size: 30rpx;
 	padding-left: 16rpx;
@@ -71,7 +71,7 @@ text {
 	margin-bottom: 22rpx;
 }
 
-.c-item-title:after {
+.t-item-title:after {
 	position: absolute;
 	width: 8rpx;
 	top: -2rpx;
@@ -81,10 +81,10 @@ text {
 	/* #endif */
 	left: 0;
 	border-radius: 20rpx;
-	background-color: $c-content-color;
+	background-color: $t-content-color;
 }
 
-.c-subsection{
+.t-subsection{
 	height: 50rpx;
 	background-color: rgb(238, 238, 239);
 	padding: 6rpx;

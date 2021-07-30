@@ -1,16 +1,19 @@
 const config = require('./config')
 
-export const $showToast = (title, _callback) => {
-	uni.showToast({
-		title,
-		icon: 'none',
-		mask: true,
-		duration: 2000,
-		success: () => {
-			if (isFunction(_callback)) {
-				_callback()
+export const $showToast = (title) => {
+	return new Promise((resolve, reject) => {
+		uni.showToast({
+			title,
+			icon: 'none',
+			mask: true,
+			duration: 2000,
+			success: (res) => {
+				resolve(res)
+			},
+			fail: (error) => {
+				reject(error)
 			}
-		}
+		})
 	})
 }
 
@@ -26,20 +29,23 @@ export const $showModal = ({
 	cancelColor = '#000000',
 	confirmText = '确定',
 	confirmColor = config['main_color']
-}, _callback) => {
-	uni.showModal({
-		title,
-		content,
-		showCancel,
-		cancelText,
-		cancelColor,
-		confirmText,
-		confirmColor,
-		success: (res) => {
-			if (isFunction(_callback)) {
-				_callback(res)
+}) => {
+	return new Promise((resolve, reject) => {
+		uni.showModal({
+			title,
+			content,
+			showCancel,
+			cancelText,
+			cancelColor,
+			confirmText,
+			confirmColor,
+			success: (res) => {
+				resolve(res)
+			},
+			fail: (error) => {
+				reject(error)
 			}
-		}
+		})
 	})
 }
 
@@ -52,8 +58,4 @@ export const $showLoading = (title) => {
 
 export const $hideLoading = () => {
 	uni.hideLoading()
-}
-
-const isFunction = (obj) => {
-	return typeof obj === 'function'
 }

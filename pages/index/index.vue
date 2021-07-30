@@ -4,9 +4,9 @@
 			<view class="flex flex-direction justify-center">
 				<view class="flex align-center">
 					<image class="index-logo" src="/static/logo.png" mode=""></image>
-					<view class="index-title text-bold">LDCake 组件库</view>
+					<view class="index-title text-bold">iTriton组件库</view>
 				</view>
-				<view class="text-df text-grey mt-10">基于uni-app的轻量、可靠UI组件库</view>
+				<view class="text-df text-grey mt-10">基于uni-app生态开发的组件库</view>
 			</view>
 		</view>
 		<view class="index__content">
@@ -17,11 +17,12 @@
 				<text class="index__content-arrow"></text>
 			</navigator>
 			<view class="text-gray text-df mb-20">工具库</view>
-			<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`"
-					v-for="(item,index) in toolList" :key="`tool_${index}`">
-				<text>{{item.name}}</text>
-				<text class="index__content-arrow"></text>
-			</navigator>
+			<view v-for="(item,index) in toolList" :key="item.url">
+				<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`">
+					<text>{{item.name}}</text>
+					<text class="index__content-arrow"></text>
+				</navigator>
+			</view>
 		</view>
 	</view>
 </template>
