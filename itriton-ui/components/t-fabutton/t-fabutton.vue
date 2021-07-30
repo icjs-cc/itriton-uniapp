@@ -1,5 +1,5 @@
 <template>
-	<view id="fabutton" class="c-fabutton"
+	<view id="fabutton" class="t-fabutton"
 		:style="[{left:`${fbuttonLeft}px`},{top:`${fbuttonTop}px`},{background:`${background}`},{width: `${width}rpx`},{height: `${height}rpx`},{zIndex: `${zIndex}`}]"
 		@touchstart="touchstart"
 		@touchmove.stop.prevent="touchmove" @touchend="touchend" @click.stop.prevent="click"
@@ -10,7 +10,7 @@
 
 <script>
 	export default {
-		name: "c-fabutton",
+		name: "t-fabutton",
 		props: {
 			// 是否停靠
 			isDock: {
@@ -131,13 +131,13 @@
 </script>
 
 <style lang="scss">
-	.c-fabutton {
+	.t-fabutton {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
 		position: fixed;
-		background-color: $c-type-primary;
+		background-color: $t-type-primary;
 
 		&.transition {
 			transition: left .3s ease, top .3s ease;

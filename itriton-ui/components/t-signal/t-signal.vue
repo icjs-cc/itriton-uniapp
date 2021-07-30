@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class='c-signal' :style='[{height: size, width: size}]'>
+		<view class="t-signal" :style='[{height: size, width: size}]'>
 			<template v-for='(item,index) in signalNumber' v-key='index'>
-				<view class='c-signal-cell'
+				<view class='t-signal-cell'
 				 :style="[{background: `${index%2==0?(index/2<num-activeIndex?normalColor:activeColor):'white'}`},{borderRadius: `0 100% 0 0`},{transform: `scale(${1-index*(1/(2*num-1))},${1-index*(1/(2*num-1))})`}]"></view>
 			</template>
 		</view>
@@ -11,7 +11,7 @@
 
 <script>
 	export default {
-		name: 'c-signal',
+		name: "t-signal",
 		props: {
 			size: {
 				type: String,
@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss">
-	.c-signal {
+	.t-signal {
 		position: relative;
 		margin: 10rpx auto;
 		padding: 0;

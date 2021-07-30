@@ -1,16 +1,16 @@
 <template>
 	<view>
-		<view class="c-demo">
-			<view class="c-demo-wrap mt-30">
-				<view class="c-demo-title">演示效果</view>
-				<view class="c-demo-area">
-					<view class="c-demo-result-line" @click="show">
+		<view class="t-demo">
+			<view class="t-demo-wrap mt-30">
+				<view class="t-demo-title">演示效果</view>
+				<view class="t-demo-area">
+					<view class="t-demo-result-line" @click="show">
 						连续点我进入开发者模式
 					</view>
 				</view>
 			</view>
 		</view>
-		<c-developer ref="developer" :defaultValue="defaultValue" :total='5' :list="list" @confirm="confirm"></c-developer>
+		<t-developer ref="developer" :defaultValue="defaultValue" :total='5' :list="list" @confirm="confirm"></t-developer>
 	</view>
 </template>
 
@@ -33,7 +33,7 @@
 			}
 		},
 		onLoad({title}) {
-			this.defaultValue = this.$c.getStorage('baseUrl')
+			this.defaultValue = this.$t.getStorage('baseUrl')
 			this.setNavigationBarTitle(title)
 		},
 		methods: {
@@ -42,7 +42,7 @@
 			},
 			confirm(val){
 				this.defaultValue = val
-				this.$c.setStorage('baseUrl', val)
+				this.$t.setStorage('baseUrl', val)
 			}
 		}
 	}

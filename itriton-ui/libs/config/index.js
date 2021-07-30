@@ -1,7 +1,7 @@
-let version = '1.0.13';
+let version = '1.0.0';
 
 export default {
-	name: 'ldcake',
+	name: 'itriton',
 	v: version,
 	version: version,
 	type: [

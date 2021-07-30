@@ -1,0 +1,38 @@
+// 此文件为itriton的主题变量，这些变量目前只能通过uni.scss引入才有效，另外由于
+// uni.scss中引入的样式会同时混入到全局样式文件和单独每一个页面的样式中，造成微信程序包太大，
+// 故uni.scss只建议放scss变量名相关样式，其他的样式可以通过main.js或者App.vue引入
+
+$t-main-color: #303133;
+$t-content-color: #606266;
+$t-tips-color: #909399;
+$t-light-color: #c0c4cc;
+$t-border-color: #F2F2F2;
+$t-bg-color: #f3f4f6;
+
+$t-type-primary: #2979ff;
+$t-type-primary-light: #ecf5ff;
+$t-type-primary-dark: #2b85e4;
+$t-type-primary-disabled: #a0cfff;
+
+$t-type-warning: #ff9900;
+$t-type-warning-light: #fdf6ec;
+$t-type-warning-dark: #fcbd71;
+$t-type-warning-disabled: #ffd283;
+
+$t-type-success: #19be6b;
+$t-type-success-disabled: #71d5a1;
+$t-type-success-dark: #18b566;
+$t-type-success-light: #dbf1e1;
+
+$t-type-error: #fa3534;
+$t-type-error-disabled: #fab6b6;
+$t-type-error-dark: #dd6161;
+$t-type-error-light: #fef0f0;
+
+$t-type-info: #909399;
+$t-type-info-disabled: #c8c9cc;
+$t-type-info-dark: #82848a;
+$t-type-info-light: #f4f4f5;
+
+$t-form-item-height: 70rpx;
+$t-form-item-border-color: #dcdfe6;

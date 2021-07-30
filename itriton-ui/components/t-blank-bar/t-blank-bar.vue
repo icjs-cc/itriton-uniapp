@@ -1,9 +1,9 @@
 <template>
 	<view>
-		<view class="c-blank-bar-wrap" :style="computedStyle">
-			<view class="c-blank-bar__cell" :class="safeAreaInsetBottom?'safe-area-inset-bottom':''"
+		<view class="t-blank-bar-wrap" :style="computedStyle">
+			<view class="t-blank-bar__cell" :class="safeAreaInsetBottom?'safe-area-inset-bottom':''"
 				:style="computedStyle">
-				<view class="c-blank-bar__cell--slot">
+				<view class="t-blank-bar__cell--slot">
 					<slot></slot>
 				</view>
 			</view>
@@ -13,7 +13,7 @@
 
 <script>
 	export default {
-		name: 'c-blank-bar',
+		name: 't-blank-bar',
 		props: {
 			height: {
 				type: Number,
@@ -43,20 +43,20 @@
 				if(this.safeAreaInsetBottom){
 					const res = uni.getSystemInfoSync()
 					// #ifdef MP
-					safeAreaInsetBottomHeight = res.screenHeight - res.safeArea.bottom + this.$c.rpx2px(bottom)
+					safeAreaInsetBottomHeight = res.screenHeight - res.safeArea.bottom + this.$t.rpx2px(bottom)
 					// #endif
 					// #ifndef MP
-						safeAreaInsetBottomHeight = res.safeAreaInsets.bottom + this.$c.rpx2px(bottom)
+						safeAreaInsetBottomHeight = res.safeAreaInsets.bottom + this.$t.rpx2px(bottom)
 					// #endif
 				}else{
-					safeAreaInsetBottomHeight = this.$c.rpx2px(bottom)
+					safeAreaInsetBottomHeight = this.$t.rpx2px(bottom)
 				}
 				let style = [
-					`--height: ${this.$c.rpx2px(this.height)+safeAreaInsetBottomHeight}px`,
+					`--height: ${this.$t.rpx2px(this.height)+safeAreaInsetBottomHeight}px`,
 					`--position: ${this.isFixed?'fixed':'relative'}`,
 					`--background: ${this.background}`
 				]
-				if(this.isBottom) style.push(`--bottom: ${this.$c.rpx2px(bottom)}px`)
+				if(this.isBottom) style.push(`--bottom: ${this.$t.rpx2px(bottom)}px`)
 				return style.join(';')
 			}
 		}
@@ -64,7 +64,7 @@
 </script>
 
 <style lang="scss">
-	.c-blank-bar {
+	.t-blank-bar {
 		&-wrap {
 			width: 100%;
 			height: var(--height);
