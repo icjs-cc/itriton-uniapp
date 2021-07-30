@@ -1,32 +1,32 @@
 {
-		"name": "@itriton/uniapp",
-		"version": "1.0.0",
-		"description": "基于uni-app的UI组件库",
-		"main": "index.js",
-		"scripts": {
-				"test": "echo \"Error: no test specified\" && exit 1"
-		},
-		"keywords": [
-				"@itriton/uniapp",
-				"@itriton",
-				"itriton-ui",
-				"uni-app",
-				"uni-app ui",
-				"uniapp",
-				"itritonui",
-				"itriton ui",
-				"itritonUI",
-				"itritonui",
-				"itritonUI",
-				"itriton UI",
-				"uni ui",
-				"uni UI",
-				"uniapp ui",
-				"ui",
-				"UI框架",
-				"uniapp ui框架",
-				"uniapp UI"
-		],
-		"author": "icjs",
-		"license": "MIT"
+  "name": "@itriton/uniapp",
+  "version": "1.0.0",
+  "description": "基于uni-app的UI组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "@itriton/uniapp",
+    "@itriton",
+    "itriton-ui",
+    "uni-app",
+    "uni-app ui",
+    "uniapp",
+    "itritonui",
+    "itriton ui",
+    "itritonUI",
+    "itritonui",
+    "itritonUI",
+    "itriton UI",
+    "uni ui",
+    "uni UI",
+    "uniapp ui",
+    "ui",
+    "UI框架",
+    "uniapp ui框架",
+    "uniapp UI"
+  ],
+  "author": "icjs-cc",
+  "license": "MIT"
 }
