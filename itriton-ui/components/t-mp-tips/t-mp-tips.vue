@@ -1,11 +1,11 @@
 <template>
-	<view class="c-mp-tips" v-if="isShow">
+	<view class="t-mp-tips" v-if="isShow">
 		<!-- #ifdef MP-WEIXIN -->
-		<view class="c-mp-tips__arrow" :style="{ marginRight: marginRight + 'px', marginTop: marginTop + 'px' }"></view>
-		<view class="c-mp-tips__content">
-			<view class="c-mp-tips__content-text">{{ text }}</view>
-			<view class="c-mp-tips__content-line"></view>
-			<view class="c-mp-tips__content-btn" @click="close">
+		<view class="t-mp-tips__arrow" :style="{ marginRight: marginRight + 'px', marginTop: marginTop + 'px' }"></view>
+		<view class="t-mp-tips__content">
+			<view class="t-mp-tips__content-text">{{ text }}</view>
+			<view class="t-mp-tips__content-line"></view>
+			<view class="t-mp-tips__content-btn" @click="close">
 				<icon type="clear" color="#FFF" :size="rpx2px(32)"/>
 			</view>
 		</view>
@@ -17,7 +17,7 @@
 	import { rpx2px } from '../../libs/utils/common.js'
 	import { setCache, getCache } from '../../libs/utils/cache.js'
 	export default {
-		name:"mp-tips",
+		name:"t-mp-tips",
 		props:{
 			text: {
 				type: String,
@@ -75,7 +75,7 @@
 </script>
 
 <style lang="scss" scoped>
-.c-mp-tips {
+.t-mp-tips {
 	position: fixed;
 	top: 0;
 	right: 0;

@@ -1,24 +1,24 @@
 <template>
-	<view class="c-developer">
+	<view class="t-developer">
 		<view :class="{'developerMask': isShow}" @click="close" @touchmove.stop.prevent="returnHandle">
-			<view class="c-developer__content" :class="{'developerShow':isShow}" @touchmove.stop.prevent="returnHandle"
+			<view class="t-developer__content" :class="{'developerShow':isShow}" @touchmove.stop.prevent="returnHandle"
 				@tap.stop="returnHandle">
-				<view class="c-developer__content-title">{{title}}</view>
-				<view class="c-developer__content-padding">
+				<view class="t-developer__content-title">{{title}}</view>
+				<view class="t-developer__content-padding">
 					<radio-group @change="radioChange">
-						<label class="c-developer__content-cell" v-for="(item,index) in developerList" :key="index"
+						<label class="t-developer__content-cell" v-for="(item,index) in developerList" :key="index"
 							@touchmove.stop.prevent="returnHandle">
-							<radio class="c-developer__content-radio" :color="themeColor||defaultColor"
+							<radio class="t-developer__content-radio" :color="themeColor||defaultColor"
 								:value="item.value" :checked="item.checked" />
 							<text>{{item.label}}</text>
 						</label>
 					</radio-group>
-					<input class="c-developer__content-custom" placeholder-style="font-size:26rpx"
+					<input class="t-developer__content-custom" placeholder-style="font-size:26rpx"
 						placeholder="请输入自定义服务器地址(注意使用英文标点符号)" type="text" v-model="customValue" v-if="isCustom" />
 				</view>
-				<view class="c-developer__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<view class="c-developer__footer-view c-developer__footer-cancel" @click="reset">{{footer.reset}}</view>
-					<view class="c-developer__footer-view c-developer__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]"
+				<view class="t-developer__footer" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
+					<view class="t-developer__footer-view t-developer__footer-cancel" @click="reset">{{footer.reset}}</view>
+					<view class="t-developer__footer-view t-developer__footer-confirm" :style="[{backgroundColor: themeColor||defaultColor}]"
 						@click="confirm">{{footer.confirm}}</view>
 				</view>
 			</view>
@@ -32,7 +32,7 @@
 		$showToast
 	} from "../../libs/utils/common.js"
 	export default {
-		name: "c-developer",
+		name: "t-developer",
 		props: {
 			// 点击次数达到目标值，触发隐藏操作
 			total: {
@@ -161,7 +161,7 @@
 		mounted() {
 			this.language = this.formatLanguage(uni.getSystemInfoSync().language)
 			this.developerList = this.list
-			this.defaultColor = this.$c.color.primary
+			this.defaultColor = this.$t.color.primary
 			this.handleStaticValue()
 			this.reset()
 		},
@@ -294,7 +294,7 @@
 				this.handleStatus(index)
 			},
 			confirm() {
-				if (this.$c.isEmpty(this.customValue) && this.isCustom) {
+				if (this.$t.isEmpty(this.customValue) && this.isCustom) {
 					let verificationTitle = ''
 					try {
 						verificationTitle = this.verificationTitleMap[this.formatLanguage(this.lang)||this.language]
@@ -315,7 +315,7 @@
 </script>
 
 <style lang="scss">
-	.c-developer {
+	.t-developer {
 		&__content {
 			position: fixed;
 			bottom: 0;

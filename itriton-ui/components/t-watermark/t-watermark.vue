@@ -1,9 +1,9 @@
 <template>
-	<view class="c-watermark">
-		<view class="c-watermark__bg">
-			<canvas canvas-id="watermark" class="c-watermark__bg-canvas"></canvas>
+	<view class="t-watermark">
+		<view class="t-watermark__bg">
+			<canvas canvas-id="watermark" class="t-watermark__bg-canvas"></canvas>
 		</view>
-		<view class="c-watermark__content">
+		<view class="t-watermark__content">
 			<slot></slot>
 		</view>
 	</view>
@@ -11,7 +11,7 @@
 
 <script>
 	export default {
-		name: 'c-watermark',
+		name: "t-watermark",
 		props:{
 			watermark: {
 				type: Array,
@@ -82,7 +82,7 @@
 </script>
 
 <style lang="scss">
-	.c-watermark {
+	.t-watermark {
 		&__bg {
 			position: fixed;
 			z-index: 1;

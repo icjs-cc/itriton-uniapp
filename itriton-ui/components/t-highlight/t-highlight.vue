@@ -1,12 +1,12 @@
 <template>
-	<view class="c-highlight">
+	<view class="t-highlight">
 		<rich-text :nodes="highlight"></rich-text>
 	</view>
 </template>
 
 <script>
 	export default {
-		name: 'c-highlight',
+		name: 't-highlight',
 		props: {
 			keyword: {
 				default: '',
@@ -27,7 +27,7 @@
 			}
 		},
 		created() {
-			this.defaultColor = this.$c.color.primary;
+			this.defaultColor = this.$t.color.primary;
 		},
 		computed: {
 			highlight() {

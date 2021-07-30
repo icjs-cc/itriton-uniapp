@@ -1,5 +1,5 @@
 <template>
-	<view class="c-captcha" :style="{color:defaultColor}">
+	<view class="t-captcha" :style="{color:defaultColor}">
 		<view v-if="showText==true" @click="handleSend">{{sendText}}</view>
 		<view v-else :style="[{color: waitColor}]">{{captchaTimer}}{{waitText}}</view>
 	</view>
@@ -7,7 +7,7 @@
 
 <script>
 	export default {
-		name: "c-captcha",
+		name: "t-captcha",
 		props: {
 			second: {
 				type: Number,
@@ -48,7 +48,7 @@
 			}
 		},
 		mounted() {
-			this.defaultColor = this.color||this.$c.color.primary
+			this.defaultColor = this.color||this.$t.color.primary
 			this.captchaTimer = this.second
 		},
 		watch:{
@@ -88,7 +88,7 @@
 </script>
 
 <style lang="scss">
-.c-captcha{
+.t-captcha{
 	padding: 0 30upx;
 	font-size: 28upx;
 	

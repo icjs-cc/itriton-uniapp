@@ -1,5 +1,5 @@
 <template>
-	<view class="c-subsection flex justify-around mt-20">
+	<view class="t-subsection flex justify-around mt-20">
 		<view class="flex-sub flex justify-center align-center text-df"
 			  :class="[index===value?'bg-white':'']"
 			  v-for="(item,index) in list" :key="index"

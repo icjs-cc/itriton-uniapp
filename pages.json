@@ -1,11 +1,11 @@
 {
 	"easycom": {
-		"^c-(.*)": "@/ldcake-ui/components/c-$1/c-$1.vue"
+		"^t-(.*)": "@/itriton-ui/components/t-$1/t-$1.vue"
 	},
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "绿豆糕组件库"
+			"navigationBarTitleText": "iTriton组件库"
 		}
 	}, {
 		"path": "pages/components/date-picker/date-picker",
@@ -101,7 +101,7 @@
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "绿豆糕组件库",
+		"navigationBarTitleText": "iTriton组件库",
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#FFFFFF"
 	}

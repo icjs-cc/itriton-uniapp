@@ -1,9 +1,9 @@
 <template>
-	<view class="c-demo">
-		<view class="c-demo-wrap">
-			<view class="c-demo-title">演示效果</view>
-			<view class="c-demo-area">
-				<view class="c-demo-result-line">
+	<view class="t-demo">
+		<view class="t-demo-wrap">
+			<view class="t-demo-title">演示效果</view>
+			<view class="t-demo-area">
+				<view class="t-demo-result-line">
 					<!-- #ifdef MP-WEIXIN -->
 					恭喜你啦！看到我了～
 					<!-- #endif -->
@@ -13,7 +13,7 @@
 				</view>
 			</view>
 		</view>
-		<c-mp-tips @close="close"></c-mp-tips>
+		<t-mp-tips @close="close"></t-mp-tips>
 	</view>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
-	<view class="c-demo">
-		<view class="c-demo-wrap">
-			<view class="c-demo-title">演示效果</view>
-			<view class="c-demo-area">
-				<view class="c-demo-result-line">
-					<c-captcha :second="second" v-model="isStart" @send="handleSend"></c-captcha>
+	<view class="t-demo">
+		<view class="t-demo-wrap">
+			<view class="t-demo-title">演示效果</view>
+			<view class="t-demo-area">
+				<view class="t-demo-result-line">
+					<t-captcha :second="second" v-model="isStart" @send="handleSend"></t-captcha>
 				</view>
 			</view>
 		</view>

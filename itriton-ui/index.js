@@ -3,7 +3,7 @@ import common from './libs/utils/common.js'
 import clipboard from './libs/utils/clipboard.js'
 import cache from './libs/utils/cache.js'
 import storage from './libs/utils/storage.js'
-const $c = {
+const $t = {
 	color,
 	...common,
 	...clipboard,
@@ -11,11 +11,11 @@ const $c = {
 	...cache,
 }
 
-// $c挂载到uni对象上
-uni.$c = $c
+// $t挂载到uni对象上
+uni.$t = $t
 
 const install = Vue => {
-	Vue.prototype.$c = $c
+	Vue.prototype.$t = $t
 }
 
 export default {

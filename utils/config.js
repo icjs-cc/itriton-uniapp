@@ -1,6 +1,6 @@
 module.exports = {
-	project_cn: '绿豆糕组件库',
-	project_en: 'ldcake-uniapp',
+	project_cn: 'iTriton组件库',
+	project_en: 'itriton-uniapp',
 	main_color: '#2979ff',
 	sub_color: '#2979ff',
 	dev_env: 'pro',

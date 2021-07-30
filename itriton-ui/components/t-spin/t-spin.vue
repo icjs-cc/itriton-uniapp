@@ -1,8 +1,8 @@
 <template>
-	<view class="c-spin" :class="computedClass" :style="computedStyle">
-	  <view class="c-spin-main">
-	    <view class="c-spin-dot" :style="[{backgroundColor: defaultColor}]"></view>
-	    <view class="c-spin-text">
+	<view class="t-spin" :class="computedClass" :style="computedStyle">
+	  <view class="t-spin-main">
+	    <view class="t-spin-dot" :style="[{backgroundColor: defaultColor}]"></view>
+	    <view class="t-spin-text">
 	      <slot></slot>
 	    </view>
 	  </view>
@@ -11,7 +11,7 @@
 
 <script>
 	export default {
-		name: "c-spin",
+		name: "t-spin",
 		props: {
 			// 大小，可选值为 large、small、default
 			size: {
@@ -50,17 +50,17 @@
 			}
 		},
 		mounted() {
-			this.defaultColor = this.themeColor||this.$c.color.primary
+			this.defaultColor = this.themeColor||this.$t.color.primary
 		},
 		computed:{
 			computedClass(){
 				let _class = [`c-spin-${this.size}`]
 				if(this.isFix) 
-					_class.push('c-spin-fix')
+					_class.push('t-spin-fix')
 				if(this.isCustom)
-					_class.push('c-spin-show-text')
+					_class.push('t-spin-show-text')
 				if(this.isFullscreen)
-					_class.push('c-spin-fullscreen')
+					_class.push('t-spin-fullscreen')
 				return _class
 			},
 			computedStyle(){
@@ -71,8 +71,8 @@
 </script>
 
 <style lang="scss">
-	.c-spin {
-		color: $c-type-primary;
+	.t-spin {
+		color: $t-type-primary;
 		vertical-align: middle;
 		text-align: center;
 		
