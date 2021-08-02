@@ -1,5 +1,6 @@
 import {
-	isEmpty
+	isEmpty,
+	replaceSymbol
 } from "./common.js"
 /**
  * 获取系统剪贴板内容
@@ -52,17 +53,18 @@ export const setClipboardData = (data, lang) => {
 			textarea.setSelectionRange(0, data.length)
 			document.execCommand('copy')
 			const res = uni.getSystemInfoSync()
+			let language = replaceSymbol(lang||res.language, ['-', '_'])
 			let title = 'Content copied'
 			const titleMap = {
-				'zh-CN': '内容已复制',
-				'zh-US': '內容已復制',
-				'zh-TW': '內容已復制',
-				'zh-HK': '內容已復制',
-				'zh-MO': '內容已復制',
-				'zh-SG': '內容已復制'
+				'zhCN': '内容已复制',
+				'zhUS': '內容已復制',
+				'zhTW': '內容已復制',
+				'zhHK': '內容已復制',
+				'zhMO': '內容已復制',
+				'zhSG': '內容已復制'
 			}
 			try {
-				title = titleMap[lang||res.language]
+				title = titleMap[language]
 				if (isEmpty(title)) {
 					title = 'Content copied'
 				}

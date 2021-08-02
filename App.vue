@@ -1,9 +1,9 @@
 <script>
 	export default {
 		onLaunch() {
-			const baseUrl = this.$t.getStorage('baseUrl')
-			if(this.$t.isEmpty(baseUrl)){
-				this.$t.setStorage('baseUrl', 'http://192.168.1.1')
+			const baseUrl = this.$it.getStorage('baseUrl')
+			if(this.$it.isEmpty(baseUrl)){
+				this.$it.setStorage('baseUrl', 'http://192.168.1.1')
 			}
 		}
 	}

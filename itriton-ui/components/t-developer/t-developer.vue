@@ -29,6 +29,7 @@
 <script>
 	import {
 		isEmpty,
+		replaceSymbol,
 		$showToast
 	} from "../../libs/utils/common.js"
 	export default {
@@ -159,9 +160,9 @@
 			}
 		},
 		mounted() {
-			this.language = this.formatLanguage(uni.getSystemInfoSync().language)
+			this.language = replaceSymbol(uni.getSystemInfoSync().language, ['-', '_'])
 			this.developerList = this.list
-			this.defaultColor = this.$t.color.primary
+			this.defaultColor = this.$it.color.primary
 			this.handleStaticValue()
 			this.reset()
 		},
@@ -171,8 +172,8 @@
 				let title = ''
 				let footer = {}
 				try {
-					title = this.titleMap[this.formatLanguage(this.lang)||this.language]
-					footer = this.footerMap[this.formatLanguage(this.lang)||this.language]
+					title = this.titleMap[replaceSymbol(this.lang||this.language, ['-', '_'])]
+					footer = this.footerMap[replaceSymbol(this.lang||this.language, ['-', '_'])]
 					if (isEmpty(title)) {
 						title = 'Developer Mode'
 						footer = {
@@ -189,9 +190,6 @@
 				}
 				this.title = title
 				this.footer = footer
-			},
-			formatLanguage(val){
-				return val.replace('-','').replace('_','')
 			},
 			radioChange(e) {
 				const value = e.detail.value
@@ -237,7 +235,7 @@
 				if (!this.developerList.length) {
 					let warn = ''
 					try {
-						warn = this.warningMap[this.formatLanguage(this.lang)||this.language]
+						warn = this.warningMap[replaceSymbol(this.lang||this.language, ['-', '_'])]
 						if (isEmpty(warn)) {
 							warn = 'Developer mode data is not set yet'
 						}
@@ -252,7 +250,7 @@
 				if (this.clickNum > (countNum - countNum / 2) && this.clickNum < countNum) {
 					let title = ''
 					try {
-						title = this.countDownTitleMap[this.formatLanguage(this.lang)||this.language]
+						title = this.countDownTitleMap[replaceSymbol(this.lang||this.language, ['-', '_'])]
 						if (isEmpty(title)) {
 							title = 'You can enter the developer mode in ${num} step'
 						}
@@ -270,7 +268,7 @@
 					this.reset()
 					let developerTitle = ''
 					try {
-						developerTitle = this.developerTitleMap[this.formatLanguage(this.lang)||this.language]
+						developerTitle = this.developerTitleMap[replaceSymbol(this.lang||this.language, ['-', '_'])]
 						if (isEmpty(developerTitle)) {
 							developerTitle = 'You are in developer mode now'
 						}
@@ -294,10 +292,10 @@
 				this.handleStatus(index)
 			},
 			confirm() {
-				if (this.$t.isEmpty(this.customValue) && this.isCustom) {
+				if (this.$it.isEmpty(this.customValue) && this.isCustom) {
 					let verificationTitle = ''
 					try {
-						verificationTitle = this.verificationTitleMap[this.formatLanguage(this.lang)||this.language]
+						verificationTitle = this.verificationTitleMap[replaceSymbol(this.lang||this.language, ['-', '_'])]
 						if (isEmpty(verificationTitle)) {
 							verificationTitle = 'Please fill in custom data'
 						}

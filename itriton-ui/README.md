@@ -45,9 +45,9 @@ Vue.use(itriton);
 	"easycom": {
 		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
 		// npm安装方式
-		"^t-(.*)": "@itriton/uniapp/components/c-$1/c-$1.vue"
+		"^t-(.*)": "@itriton/uniapp/components/t-$1/t-$1.vue"
 		// 下载安装方式
-		// "^t-(.*)": "@/@itriton/uniapp/components/c-$1/c-$1.vue"
+		// "^t-(.*)": "@/@itriton/uniapp/components/t-$1/t-$1.vue"
 	},
 	// 此为本身已有的内容
 	"pages": [

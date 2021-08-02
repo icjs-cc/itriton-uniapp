@@ -4,10 +4,10 @@
 			<view class="t-demo-title">演示效果</view>
 			<view class="t-demo-area">
 				<view class="t-demo-result-line">
-					<view @click="setClipboardData">复制内容（this.$t.setClipboardData）</view>
+					<view @click="setClipboardData">复制内容（this.$it.setClipboardData）</view>
 				</view>
 				<view class="t-demo-result-line">
-					<view @click="getClipboardData">获取内容（this.$t.getClipboardData）</view>
+					<view @click="getClipboardData">获取内容（this.$it.getClipboardData）</view>
 				</view>
 			</view>
 		</view>
@@ -21,10 +21,10 @@
 		},
 		methods:{
 			setClipboardData(){
-				this.$t.setClipboardData("复制内容")
+				this.$it.setClipboardData("复制内容")
 			},
 			getClipboardData(){
-				this.$t.getClipboardData().then(res=>{
+				this.$it.getClipboardData().then(res=>{
 					this.$showToast(res)
 				})
 			}

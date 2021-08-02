@@ -50,7 +50,7 @@
 			}
 		},
 		mounted() {
-			this.defaultColor = this.themeColor||this.$t.color.primary
+			this.defaultColor = this.themeColor||this.$it.color.primary
 		},
 		computed:{
 			computedClass(){

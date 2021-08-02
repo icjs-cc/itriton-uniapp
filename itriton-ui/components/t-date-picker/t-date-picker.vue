@@ -150,7 +150,7 @@
 			}
 		},
 		created() {
-			this.defaultColor = this.$t.color.primary;
+			this.defaultColor = this.$it.color.primary;
 			this.init();
 		},
 		methods: {

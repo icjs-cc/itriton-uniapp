@@ -27,7 +27,7 @@
 			}
 		},
 		created() {
-			this.defaultColor = this.$t.color.primary;
+			this.defaultColor = this.$it.color.primary;
 		},
 		computed: {
 			highlight() {

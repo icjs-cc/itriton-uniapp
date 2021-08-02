@@ -43,20 +43,20 @@
 				if(this.safeAreaInsetBottom){
 					const res = uni.getSystemInfoSync()
 					// #ifdef MP
-					safeAreaInsetBottomHeight = res.screenHeight - res.safeArea.bottom + this.$t.rpx2px(bottom)
+					safeAreaInsetBottomHeight = res.screenHeight - res.safeArea.bottom + this.$it.rpx2px(bottom)
 					// #endif
 					// #ifndef MP
-						safeAreaInsetBottomHeight = res.safeAreaInsets.bottom + this.$t.rpx2px(bottom)
+						safeAreaInsetBottomHeight = res.safeAreaInsets.bottom + this.$it.rpx2px(bottom)
 					// #endif
 				}else{
-					safeAreaInsetBottomHeight = this.$t.rpx2px(bottom)
+					safeAreaInsetBottomHeight = this.$it.rpx2px(bottom)
 				}
 				let style = [
-					`--height: ${this.$t.rpx2px(this.height)+safeAreaInsetBottomHeight}px`,
+					`--height: ${this.$it.rpx2px(this.height)+safeAreaInsetBottomHeight}px`,
 					`--position: ${this.isFixed?'fixed':'relative'}`,
 					`--background: ${this.background}`
 				]
-				if(this.isBottom) style.push(`--bottom: ${this.$t.rpx2px(bottom)}px`)
+				if(this.isBottom) style.push(`--bottom: ${this.$it.rpx2px(bottom)}px`)
 				return style.join(';')
 			}
 		}
