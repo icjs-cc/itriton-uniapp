@@ -28,7 +28,7 @@
 			},
 			positon: {
 				type: String,
-				default: 'left'
+				default: 'right'
 			}
 		},
 		data() {
