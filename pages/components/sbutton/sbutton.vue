@@ -9,7 +9,9 @@
 			</view>
 		</view>
 		<t-sbutton>
-			<view class="text-white text-xxl" @click="handleAdd">+</view>
+			<view class="flex align-center justify-center text-white text-xxl mb-10" @click="handleAdd">
+				<text>+</text>
+			</view>
 		</t-sbutton>
 	</view>
 </template>
@@ -24,7 +26,7 @@
 		},
 		methods:{
 			handleAdd(){
-				console.log("add")
+				this.$it.$showToast({title: '您点击了我'})
 			}
 		}
 	}

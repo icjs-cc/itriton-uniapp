@@ -1,9 +1,10 @@
 <template>
 	<view class="t-sbutton"
+				:class="[isMore?`animation-fold-${positon}`:`animation-unfold-${positon}`]"
 	      :style="{top: top, backgroundColor: bgColor||defaultColor, [positon]: `${offset}rpx`, transform: `rotate(${positon==='right'?'0deg':'180deg'})`}">
-		<view class="t-sbutton-icon t-sbutton-icon-more t-sbutton__more" :style="{color: fontColor }"
-					v-if="isMore" @click="more"></view>
-		<view class="t-sbutton__content" :style="{backgroundColor: bgColor||defaultColor }" v-else="!isMore">
+		<view class="t-sbutton-icon t-sbutton-icon-more t-sbutton__more"
+					:style="{color: fontColor}" v-if="isMore" @click="more"></view>
+		<view class="t-sbutton__content" :style="{backgroundColor: bgColor||defaultColor,width: isMore?'0rpx':'100rpx'}" v-else="!isMore">
 			<slot></slot>
 		</view>
 	</view>
@@ -34,8 +35,7 @@
 			return {
 				defaultColor: '',
 				isMore: true,
-				offset: -80,
-				defaultOffset: -80,
+				offset: 0,
 				timer: null,
 			};
 		},
@@ -47,10 +47,8 @@
 		},
 		methods:{
 			more() {
-				this.offset = 0
 				this.isMore = false
 				this.timer = setTimeout(()=>{
-					this.offset = this.defaultOffset
 					this.isMore = true
 				},5000)
 			}
@@ -75,13 +73,15 @@
 	.t-sbutton-icon-more:before {
 		content: "\e635";
 	}
-
+	
 	.t-sbutton {
 		position: fixed;
 		width: 130rpx;
 		height: 100rpx;
 		z-index: 10;
 		border-radius: 50rpx 0 0 50rpx;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
 
 		&__more {
 			position: absolute;
@@ -95,7 +95,6 @@
 			position: absolute;
 			left: 0;
 			top: 0;
-			width: 100rpx;
 			height: 100rpx;
 			border-radius: 50rpx;
 			display: flex;
@@ -105,6 +104,58 @@
 			transition: transform 0.4s;
 			transform: translateX(0) rotate(0deg);
 			color: #FFFFFF;
+		}
+	}
+	
+	.animation-unfold-left{
+		animation-name: unfoldLeft;
+	}
+	
+	.animation-fold-left{
+		animation-name: foldLeft;
+	}
+	
+	@keyframes unfoldLeft{
+		from{
+			left: -80rpx;
+		}
+		to {
+			left: 0rpx;
+		}
+	}
+	
+	@keyframes foldLeft{
+		from{
+			left: 0rpx;
+		}
+		to {
+			left: -80rpx;
+		}
+	}
+	
+	.animation-unfold-right{
+		animation-name: unfoldRight;
+	}
+	
+	.animation-fold-right{
+		animation-name: foldRight;
+	}
+	
+	@keyframes unfoldRight{
+		from{
+			right: -80rpx;
+		}
+		to {
+			right: 0rpx;
+		}
+	}
+	
+	@keyframes foldRight{
+		from{
+			right: 0rpx;
+		}
+		to {
+			right: -80rpx;
 		}
 	}
 </style>
