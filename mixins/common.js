@@ -42,6 +42,10 @@ export default {
 					name: '开发者模式（developer）',
 					url: '/pages/components/developer/developer'
 				},
+				{
+					name: '侧边按钮（sbutton）',
+					url: '/pages/components/sbutton/sbutton'
+				},
 			],
 			toolList: [
 				{
