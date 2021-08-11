@@ -1,7 +1,7 @@
 <template>
 	<view class="t-sbutton"
-				:class="[isMore?`animation-fold-${positon}`:`animation-unfold-${positon}`]"
-	      :style="{top: top, backgroundColor: bgColor||defaultColor, [positon]: `${offset}rpx`, transform: `rotate(${positon==='right'?'0deg':'180deg'})`}">
+				:class="[!isInit?(isMore?`animation-fold-${positon}`:`animation-unfold-${positon}`):'']"
+	      :style="computedStyle">
 		<view class="t-sbutton-icon t-sbutton-icon-more t-sbutton__more"
 					:style="{color: fontColor}" v-if="isMore" @click="more"></view>
 		<view class="t-sbutton__content" :style="{backgroundColor: bgColor||defaultColor,width: isMore?'0rpx':'100rpx'}" v-else="!isMore">
@@ -28,26 +28,40 @@
 			},
 			positon: {
 				type: String,
-				default: 'right'
+				default: 'left'
 			}
 		},
 		data() {
 			return {
 				defaultColor: '',
 				isMore: true,
-				offset: 0,
+				offset: -80,
 				timer: null,
+				timerInit: null,
+				isInit: true
 			};
 		},
 		created() {
 			this.defaultColor = this.$it.color.primary
 		},
 		destroyed() {
+			clearTimeout(this.timerInit)
 			clearTimeout(this.timer)
+		},
+		computed:{
+			computedStyle(){
+				return [
+					`top: ${this.top}`, 
+					`background-color: ${this.bgColor||this.defaultColor}`,
+					`${this.positon}: ${this.offset}rpx`,
+					`transform: rotate(${this.positon==='right'?'0deg':'180deg'})`
+				].join(';')
+			}
 		},
 		methods:{
 			more() {
 				this.isMore = false
+				this.isInit = false
 				this.timer = setTimeout(()=>{
 					this.isMore = true
 				},5000)
