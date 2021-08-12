@@ -74,4 +74,3 @@ Vue.use(itriton);
 
 ## 版权信息
 @itriton/uniapp遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将@itriton/uniapp应用到您的产品中。
-
