@@ -68,7 +68,7 @@ Vue.use(itriton);
 
 ```html
 <template>
-	<t-date-picker></t-date-picker>
+  <t-date-picker></t-date-picker>
 </template>
 ```
 

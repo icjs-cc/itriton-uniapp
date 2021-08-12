@@ -1,3 +1,10 @@
+# iTriton组件库
+
+[![star](https://gitee.com/ibaleine-open-source/itriton-uniapp/badge/star.svg?theme=dark)](https://gitee.com/ibaleine-open-source/ibaleine-weapp/stargazers)
+[![fork](https://gitee.com/ibaleine-open-source/itriton-uniapp/badge/fork.svg?theme=dark)](https://gitee.com/ibaleine-open-source/ibaleine-weapp/members)
+
+[![ibaleine-weapp](https://img.shields.io/static/v1?label=Github&message=itriton-uniapp&color=orange)](https://github.com/icjs-cc/itriton-uniapp.git)
+
 ## 介绍
 
 [@itriton/uniapp](http://itriton.icjs.ink/)，是基于[uni-app](https://uniapp.dcloud.io/)生态开发的组件库
@@ -61,7 +68,7 @@ Vue.use(itriton);
 
 ```html
 <template>
-	<t-date-picker></t-date-picker>
+  <t-date-picker></t-date-picker>
 </template>
 ```
 
