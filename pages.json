@@ -116,6 +116,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/components/battery/battery",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
