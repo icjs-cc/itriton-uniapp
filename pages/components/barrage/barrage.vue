@@ -8,7 +8,7 @@
 				</view>
 			</view>
 		</view>
-		<t-barrage :list="list" :row="1">
+		<t-barrage :list="list" :row="3">
 			<template v-slot:scope="{item}">
 				<view class="barrage">{{item.title}}</view>
 			</template>

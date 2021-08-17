@@ -10,34 +10,35 @@
 	export default {
 		name: "t-barrage",
 		props: {
+			// 消息数据
 			list: {
 				type: Array,
 				default: []
 			},
-			//持续时间
+			// 持续时间
 			duration: {
 				type: Number,
 				default: 3000
 			},
-			//顶部距离px
+			// 距离顶部
 			top: {
 				type: String,
 				default: '350rpx'
 			},
-			//左边距离px
+			// 距离左边
 			left: {
 				type: String,
 				default: '10rpx'
 			},
-			//动画半径
+			// 动画半径
 			radius: {
 				type: Number,
 				default: 30
 			},
-			//显示行数
+			// 显示行数
 			row: {
 				type: Number,
-				default: 3
+				default: 1
 			},
 		},
 		data() {
