@@ -21,11 +21,11 @@
 		data(){
 			return {
 				list: [
-					{id: 1, image: '', title: '用户18**购买了商品'},
-					{id: 2, image: '', title: '用户13**购买了商品'},
-					{id: 3, image: '', title: '用户17**购买了商品'},
-					{id: 3, image: '', title: '用户19**购买了商品'},
-					{id: 3, image: '', title: '用户13**购买了商品'}
+					{id: 1, image: '', title: '用户18*购买了商品'},
+					{id: 2, image: '', title: '用户13*购买了商品'},
+					{id: 3, image: '', title: '用户17*购买了商品'},
+					{id: 3, image: '', title: '用户19*购买了商品'},
+					{id: 3, image: '', title: '用户13*购买了商品'}
 				]
 			}
 		},
@@ -37,7 +37,7 @@
 
 <style>
 .barrage{
-	width: 300rpx;
+	width: 330rpx;
 	background-color: rgba(0,0,0,.5);
 	color: #FFF;
 	border-radius: 25rpx;
