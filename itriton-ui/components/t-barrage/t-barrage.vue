@@ -51,7 +51,7 @@
 			}
 		},
 		mounted() {
-			this.animationInterval();
+			this.animationInterval()
 		},
 		destroyed() {
 			if (this.interval) clearInterval(this.interval)
