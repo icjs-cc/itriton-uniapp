@@ -46,6 +46,14 @@ export default {
 					name: '侧边按钮（sbutton）',
 					url: '/pages/components/sbutton/sbutton'
 				},
+				{
+					name: '消息弹幕（barrage）',
+					url: '/pages/components/barrage/barrage'
+				},
+				{
+					name: '电量（battery）',
+					url: '/pages/components/battery/battery'
+				},
 			],
 			toolList: [
 				{
