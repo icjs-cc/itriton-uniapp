@@ -11,7 +11,7 @@
 					<view>
 						月出惊山鸟，时鸣春涧中。
 					</view>
-					<t-spin isFix :isFullscreen="isFullscreen" v-if="isShow"></t-spin>
+					<t-spin ref="spin" isFix :isFullscreen="isFullscreen" v-if="isShow"></t-spin>
 				</view>
 			</view>
 		</view>
@@ -54,7 +54,12 @@
 		},
 		methods: {
 			handleChange(val) {
-				this.isShow = !val
+				if(val===0){
+					this.$refs.spin.show()
+				}else{
+					this.$refs.spin.hide()
+				}
+				// this.isShow = !val
 			},
 			handleFullscreen(val) {
 				this.isFullscreen = val === 0 ? false : true
