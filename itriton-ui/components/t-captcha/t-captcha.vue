@@ -250,7 +250,9 @@ $t-captcha-footer-radius: 20px;
 	
 	&__footer{
 		position: relative;
-		padding: $t-captcha-padding 0;
+		display: flex;
+		align-items: center;
+		padding-top: $t-captcha-padding;
 		height: $t-captcha-footer-height;
 		
 		&-bg{
