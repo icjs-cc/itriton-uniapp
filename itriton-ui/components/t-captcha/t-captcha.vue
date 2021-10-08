@@ -186,7 +186,7 @@
 
 <style lang="scss">
 $t-captcha-padding: 10px;
-$t-captcha-footer-height: 40px;
+$t-captcha-footer-height: 32px;
 $t-captcha-footer-radius: 20px;
 
 .t-captcha{
