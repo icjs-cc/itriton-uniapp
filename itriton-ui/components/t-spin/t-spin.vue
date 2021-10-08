@@ -130,6 +130,9 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 		}
