@@ -124,6 +124,14 @@
                 "enablePullDownRefresh": false
             }
             
+        },{
+            "path" : "pages/components/vcode/vcode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
         }
     ],
 	"globalStyle": {

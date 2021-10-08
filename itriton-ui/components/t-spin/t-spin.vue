@@ -1,5 +1,5 @@
 <template>
-	<view class="t-spin" :class="computedClass" :style="computedStyle">
+	<view class="t-spin" :class="computedClass" :style="computedStyle" v-if="isShow">
 	  <view class="t-spin-main">
 	    <view class="t-spin-dot" :style="[{backgroundColor: defaultColor}]"></view>
 	    <view class="t-spin-text">
@@ -46,7 +46,8 @@
 		},
 		data(){
 			return {
-				defaultColor: ''
+				defaultColor: '',
+				isShow: true
 			}
 		},
 		mounted() {
@@ -65,6 +66,14 @@
 			},
 			computedStyle(){
 				return [{'backgroundColor': `rgba(255,255,255,${this.opacity})`}]
+			}
+		},
+		methods:{
+			show(){
+				this.isShow = true
+			},
+			hide(){
+				this.isShow = false
 			}
 		}
 	}
@@ -121,6 +130,9 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 		}

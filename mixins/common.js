@@ -19,7 +19,11 @@ export default {
 					url: '/pages/components/mp-tips/mp-tips'
 				},
 				{
-					name: '获取验证码（captcha）',
+					name: '获取验证码（vcode）',
+					url: '/pages/components/vcode/vcode'
+				},
+				{
+					name: '行为验证（captcha）',
 					url: '/pages/components/captcha/captcha'
 				},
 				{
