@@ -11,7 +11,8 @@
 				 </view>
 				 <t-spin ref="captchaSpin" isFix :themeColor="themeColor"></t-spin>
 			</view>
-			<view class="t-captcha__footer" :style="_computedFooterStyle" @touchend="handleTouchend">
+			<view class="t-captcha__footer" :style="_computedFooterStyle" @touchend="handleTouchend" 
+				@mouseup.native="handleTouchend">
 				<view class="t-captcha__footer-bg" :style="{width: `${width}px`}">{{placeholder}}</view>
 				<movable-area class="t-captcha__footer-movable-area" :style="{width: `${width}px`}" :animation="true">
 					<movable-view :x="x" direction="horizontal" class="t-captcha__footer-icon" @change="changeMovableArea"
@@ -178,6 +179,7 @@
 				this.$emit("info")
 			},
 			handleTouchend(){
+				console.log("xx")
 				this.$emit("end", {x: this.x})
 			},
 		}
