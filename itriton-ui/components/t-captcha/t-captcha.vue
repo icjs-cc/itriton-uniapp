@@ -103,7 +103,7 @@
 		},
 		data() {
 			return {
-				x: 0,
+				x: 1,
 				timeoutStatus: null,
 				isShow: false,
 				isSuccess: false,
@@ -167,8 +167,8 @@
 					this.timeoutStatus = setTimeout(()=>{
 						this.isSuccess = false
 						this.isError = false
-						if(this.x > 0) {
-							this.x = 0
+						if(this.x > 1) {
+							this.x = 1
 						}
 						this.showLoading()
 						this.$emit("reset")
@@ -179,7 +179,6 @@
 				this.$emit("info")
 			},
 			handleTouchend(){
-				console.log("xx")
 				this.$emit("end", {x: this.x})
 			},
 		}
@@ -277,8 +276,8 @@ $t-captcha-footer-radius: 20px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: $t-captcha-footer-height;
-			height: $t-captcha-footer-height;
+			width: $t-captcha-footer-height+2;
+			height: $t-captcha-footer-height+2;
 			background-repeat: no-repeat;
 			background-position: center;
 			border-radius: 50%;
