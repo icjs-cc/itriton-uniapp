@@ -1,11 +1,9 @@
 <template>
-	<view>
-		<view class="t-blank-bar-wrap" :style="computedStyle">
-			<view class="t-blank-bar__cell" :class="safeAreaInsetBottom?'safe-area-inset-bottom':''"
-				:style="computedStyle">
-				<view class="t-blank-bar__cell--slot">
-					<slot></slot>
-				</view>
+	<view class="t-blank-bar-wrap" :style="computedStyle">
+		<view class="t-blank-bar__cell" :class="safeAreaInsetBottom?'safe-area-inset-bottom':''"
+			:style="computedStyle">
+			<view class="t-blank-bar__cell--slot">
+				<slot></slot>
 			</view>
 		</view>
 	</view>

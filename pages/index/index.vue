@@ -4,9 +4,11 @@
 			<view class="flex flex-direction justify-center">
 				<view class="flex align-center">
 					<image class="index-logo" src="/static/logo.png" mode=""></image>
-					<view class="index-title text-bold">iTriton组件库</view>
+					<view>
+						<view class="index-title text-bold">iTriton组件库</view>
+						<view class="text-df text-grey mt-10 ml-20">基于uni-app生态开发的组件库</view>
+					</view>
 				</view>
-				<view class="text-df text-grey mt-10">基于uni-app生态开发的组件库</view>
 			</view>
 		</view>
 		<view class="index__content">
@@ -40,8 +42,8 @@
 		padding: 80rpx 50rpx;
 
 		&-logo {
-			height: 80rpx;
-			width: 80rpx;
+			height: 100rpx;
+			width: 100rpx;
 		}
 
 		&-title {
