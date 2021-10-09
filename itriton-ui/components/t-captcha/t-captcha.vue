@@ -254,7 +254,7 @@ $t-captcha-footer-radius: 20px;
 		display: flex;
 		align-items: center;
 		padding-top: $t-captcha-padding;
-		height: $t-captcha-footer-height;
+		height: $t-captcha-footer-height+2;
 		
 		&-bg{
 			position: absolute;
@@ -263,13 +263,13 @@ $t-captcha-footer-radius: 20px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			height: $t-captcha-footer-height;
+			height: $t-captcha-footer-height+2;
 			border-radius: $t-captcha-footer-radius;
 			font-size: 15px;
 		}
 		
 		&-movable-area{
-			height: $t-captcha-footer-height;
+			height: $t-captcha-footer-height+2;
 		}
 		
 		&-icon{
