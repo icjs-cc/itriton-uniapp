@@ -72,6 +72,10 @@ export default {
 					name: '剪贴板（clipboard）',
 					url: '/pages/tools/copy/copy'
 				},
+				{
+					name: '动画（animation）',
+					url: '/pages/tools/animation/animation'
+				},
 			]
 		}
 	},

@@ -9,7 +9,7 @@
 			</view>
 		</view>
 		<t-sbutton>
-			<view class="flex align-center justify-center text-white text-xxl mb-10" @click="handleAdd">
+			<view class="t-flex t-align-center t-justify-center t-text-white t-text-xxl t-mb-10" @click="handleAdd">
 				<text>+</text>
 			</view>
 		</t-sbutton>

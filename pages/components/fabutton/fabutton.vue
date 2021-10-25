@@ -6,10 +6,10 @@
 				<view class="t-demo-result-line">fabutton是否停靠：{{ isDock }}</view>
 			</view>
 		</view>
-		<view class="t-item-title mt-20">是否停靠</view>
+		<view class="t-item-title t-mt-20">是否停靠</view>
 		<subsection :list="list" v-model="current" @change="handleChange"></subsection>
 		<t-fabutton :is-dock="isDock">
-			<view class="flex align-center text-xxl mb-5 text-white">+</view>
+			<view class="t-flex t-align-center t-text-xxl t-mb-5 t-text-white">+</view>
 		</t-fabutton>
 	</view>
 </template>

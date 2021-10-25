@@ -1,7 +1,7 @@
 <template>
-	<view class="t-subsection flex justify-around mt-20">
-		<view class="flex-sub flex justify-center align-center text-df"
-			  :class="[index===value?'bg-white':'']"
+	<view class="t-subsection t-flex t-justify-around t-mt-20">
+		<view class="t-flex-sub t-flex t-justify-center t-align-center t-text-df"
+			  :class="[index===value?'t-bg-white':'']"
 			  v-for="(item,index) in list" :key="index"
 			  @click="toggle(index)">{{item.name}}</view>
 	</view>

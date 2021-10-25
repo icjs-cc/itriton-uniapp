@@ -86,12 +86,4 @@
 			}
 		}
 	}
-	
-	/* start--iPhoneX底部安全区定义--start */
-	.safe-area-inset-bottom {
-	  padding-bottom: 0;  
-	  padding-bottom: constant(safe-area-inset-bottom);  
-	  padding-bottom: env(safe-area-inset-bottom);  
-	} 
-	/* end-iPhoneX底部安全区定义--end */
 </style>

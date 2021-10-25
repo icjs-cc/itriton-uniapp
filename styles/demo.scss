@@ -37,13 +37,17 @@ text {
 	border-radius: 10rpx;
 	background-color: rgb(240, 240, 240);
 	color: $t-content-color;
-	font-size: 30rpx;
+	font-size: 28rpx;
 	/* #ifndef APP-NVUE */
 	word-break: break-word;
 	display: inline-block;
 	/* #endif */
 	text-align: left;
 
+}
+
+.t-demo-result-line-max{
+	width: 600rpx;
 }
 
 .t-demo-title,
