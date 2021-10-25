@@ -8,7 +8,7 @@
 				v-for="(item, index) in animationList"
 			>
 				<view>{{ item.name }}</view>
-				<view>{{ item.animation }}</view>
+				<view class="t-text-xxs">{{ item.animation }}</view>
 			</view>
 			<view class="t-item-title t-mt-20">是否反向（t-animation-reverse）</view>
 		</view>
@@ -67,7 +67,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	width: 350rpx;
-	height: 100rpx;
+	height: 120rpx;
 	margin-bottom: 10rpx;
 	border-radius: 10rpx;
 	font-size: 28rpx;
