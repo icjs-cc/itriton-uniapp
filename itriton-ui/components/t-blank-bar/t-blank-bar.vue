@@ -57,7 +57,7 @@
 					`--height: ${this.$it.rpx2px(this.height)+safeAreaInsetBottomHeight}px`,
 					`--position: ${this.isFixed?'fixed':'relative'}`,
 					`--background: ${this.background}`,
-					`--padding: 0 ${this.$it.rpx2px(this.padding)}px`
+					`--padding: ${this.$it.rpx2px(this.padding)}px`
 				]
 				if(this.isBottom) style.push(`--bottom: ${this.$it.rpx2px(bottom)}px`)
 				return style.join(';')
@@ -80,7 +80,8 @@
 			flex-shrink: 0;
 			bottom: var(--bottom);
 			height: var(--height);
-			padding: var(--padding);
+			padding-left: var(--padding);
+			padding-right: var(--padding);
 			background-color: var(--background);
 			width: 100%;
 			z-index: 2;
