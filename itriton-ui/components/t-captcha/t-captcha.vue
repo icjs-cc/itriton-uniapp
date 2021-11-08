@@ -3,7 +3,7 @@
 		<view class="t-captcha-wrap">
 			<view class="t-captcha__content">
 				<view class="t-captcha__content-image" :style="_computedSizeStyle"></view>
-				<image class="t-captcha__content-jigsaw" :src="jigsaw" mode="heightFix" :style="{ height: `${height}px`, left: `${this.x}px` }"></image>
+				<image class="t-captcha__content-jigsaw" :src="jigsaw" mode="heightFix" :style="[_computedJigsawStyle, { left: `${moveX}px` }]"></image>
 				<view class="t-captcha__content-status">
 					<view class="t-captcha__content-status--success" v-if="isSuccess" :style="{ backgroundColor: successColor }">{{ successText }}</view>
 					<view class="t-captcha__content-status--error" v-if="isError" :style="{ backgroundColor: errorColor }">{{ errorText }}</view>
@@ -13,7 +13,15 @@
 			<view class="t-captcha__footer" :style="_computedFooterStyle" @touchend="handleTouchend" @mouseup.native="handleTouchend">
 				<view class="t-captcha__footer-bg" :style="{ width: `${width}px` }">{{ placeholder }}</view>
 				<movable-area class="t-captcha__footer-movable-area" :style="{ width: `${width}px` }" :animation="true">
-					<movable-view :x="x" direction="horizontal" class="t-captcha__footer-icon" @change="changeMovableArea" :style="{ backgroundColor: _computedThemeColor }"></movable-view>
+					<movable-view
+						class="t-captcha__footer-icon"
+						direction="horizontal"
+						inertia
+						:x="x"
+						:disabled="loading"
+						:style="{ backgroundColor: _computedThemeColor }"
+						@change="changeMovableArea"
+					></movable-view>
 				</movable-area>
 			</view>
 		</view>
@@ -101,17 +109,21 @@ export default {
 	data() {
 		return {
 			x: 1,
+			moveX: 1,
 			timeoutStatus: null,
+			timeoutReset: null,
 			isShow: false,
 			isSuccess: false,
 			isError: false,
 			iconDel: require('./icon/del.png'),
 			iconRefresh: require('./icon/refresh.png'),
-			iconInfo: require('./icon/info.png')
+			iconInfo: require('./icon/info.png'),
+			loading: false
 		};
 	},
 	destroyed() {
 		if (this.timeoutStatus) clearTimeout(this.timeoutStatus);
+		if (this.timeoutReset) clearTimeout(this.timeoutReset);
 	},
 	computed: {
 		_computedSizeStyle() {
@@ -120,6 +132,12 @@ export default {
 			_style.push(`width: ${this.width}px`);
 			_style.push(`background-image: url(${this.backgroundImage})`);
 			return _style.join(';');
+		},
+		_computedJigsawStyle() {
+			return {
+				height: `${this.height}px`,
+				maxWidth: `${this.width}px`
+			}
 		},
 		_computedFooterStyle() {
 			let _style = [];
@@ -133,9 +151,11 @@ export default {
 	},
 	methods: {
 		show() {
+			this.loading = true;
 			this.isShow = true;
 		},
 		hide() {
+			this.loading = false;
 			this.isShow = false;
 		},
 		success() {
@@ -148,16 +168,18 @@ export default {
 		},
 		showLoading() {
 			this.$nextTick(() => {
+				this.loading = true;
 				this.$refs.captchaSpin.show();
 			});
 		},
 		hideLoading() {
 			this.$nextTick(() => {
+				this.loading = false;
 				this.$refs.captchaSpin.hide();
 			});
 		},
 		changeMovableArea(e) {
-			this.x = e.detail.x;
+			this.moveX = e.detail.x;
 		},
 		reset(immediately) {
 			if (immediately) {
@@ -167,9 +189,14 @@ export default {
 				this.timeoutStatus = setTimeout(() => {
 					this.isSuccess = false;
 					this.isError = false;
-					if (this.x > 1) {
+					if (this.moveX > 1) {
+						// 需要给x重新赋值，不然无法重置x位置
+						this.x = this.moveX;
 						this.$nextTick(() => {
-							this.x = 1;
+							this.timeoutReset = setTimeout(() => {
+								this.moveX = 1;
+								this.x = 1;
+							}, 300);
 						});
 					}
 					this.showLoading();
@@ -181,7 +208,9 @@ export default {
 			this.$emit('info');
 		},
 		handleTouchend() {
-			this.$emit('end', { x: this.x });
+			if (!this.loading) {
+				this.$emit('end', { x: this.x });
+			}
 		}
 	}
 };
