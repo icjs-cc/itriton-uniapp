@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<t-blank-bar background="#f0f0f0" :is-fixed="true">
-			<view class="pl-5 pr-5 text-df">
+			<view class="t-pl-5 t-pr-5 t-text-df">
 				这是固定的空白栏
 			</view>
 		</t-blank-bar>

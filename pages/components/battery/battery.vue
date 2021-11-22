@@ -2,11 +2,11 @@
 	<view class="t-demo">
 		<view class="t-demo-wrap">
 			<view class="t-demo-title">演示效果</view>
-			<view class="t-demo-area flex justify-center">
+			<view class="t-demo-area t-flex t-justify-center">
 				<t-battery :theme-color="themeColor" :value="value"></t-battery>
 			</view>
 		</view>
-		<view class="t-item-title mt-20">改变电量</view>
+		<view class="t-item-title t-mt-20">改变电量</view>
 		<subsection :list="list" v-model="current" @change="handleChange"></subsection>
 	</view>
 </template>
@@ -61,7 +61,3 @@
 		}
 	}
 </script>
-
-<style>
-
-</style>

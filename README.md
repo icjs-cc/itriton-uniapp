@@ -1,9 +1,10 @@
-# iTriton组件库
+# itriton-uniapp
 
 [![star](https://gitee.com/ibaleine-open-source/itriton-uniapp/badge/star.svg?theme=dark)](https://gitee.com/ibaleine-open-source/ibaleine-weapp/stargazers)
 [![fork](https://gitee.com/ibaleine-open-source/itriton-uniapp/badge/fork.svg?theme=dark)](https://gitee.com/ibaleine-open-source/ibaleine-weapp/members)
 
-[![ibaleine-weapp](https://img.shields.io/static/v1?label=Github&message=itriton-uniapp&color=orange)](https://github.com/icjs-cc/itriton-uniapp.git)
+[![GitHub stars](https://img.shields.io/github/stars/icjs-cc/itriton-uniapp?logo=GitHub&style=flat-square)](https://github.com/icjs-cc/itriton-uniapp/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/icjs-cc/itriton-uniapp?logo=Github&style=flat-square)](https://github.com/icjs-cc/itriton-uniapp/network)
 
 ## 介绍
 

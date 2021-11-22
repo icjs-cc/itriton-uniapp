@@ -1,11 +1,9 @@
 <template>
-	<view>
-		<view class="t-blank-bar-wrap" :style="computedStyle">
-			<view class="t-blank-bar__cell" :class="safeAreaInsetBottom?'safe-area-inset-bottom':''"
-				:style="computedStyle">
-				<view class="t-blank-bar__cell--slot">
-					<slot></slot>
-				</view>
+	<view class="t-blank-bar-wrap" :style="computedStyle">
+		<view class="t-blank-bar__cell" :class="safeAreaInsetBottom?'safe-area-inset-bottom':''"
+			:style="computedStyle">
+			<view class="t-blank-bar__cell--slot">
+				<slot></slot>
 			</view>
 		</view>
 	</view>
@@ -35,6 +33,10 @@
 				type: String,
 				default: 'rgba(0,0,0,0)'
 			},
+			padding: {
+				type: Number,
+				default: 30
+			}
 		},
 		computed: {
 			computedStyle() {
@@ -54,7 +56,8 @@
 				let style = [
 					`--height: ${this.$it.rpx2px(this.height)+safeAreaInsetBottomHeight}px`,
 					`--position: ${this.isFixed?'fixed':'relative'}`,
-					`--background: ${this.background}`
+					`--background: ${this.background}`,
+					`--padding: ${this.$it.rpx2px(this.padding)}px`
 				]
 				if(this.isBottom) style.push(`--bottom: ${this.$it.rpx2px(bottom)}px`)
 				return style.join(';')
@@ -77,10 +80,10 @@
 			flex-shrink: 0;
 			bottom: var(--bottom);
 			height: var(--height);
+			padding-left: var(--padding);
+			padding-right: var(--padding);
 			background-color: var(--background);
 			width: 100%;
-			padding-left: 30rpx;
-			padding-right: 30rpx;
 			z-index: 2;
 			
 			&--slot{
@@ -88,12 +91,4 @@
 			}
 		}
 	}
-	
-	/* start--iPhoneX底部安全区定义--start */
-	.safe-area-inset-bottom {
-	  padding-bottom: 0;  
-	  padding-bottom: constant(safe-area-inset-bottom);  
-	  padding-bottom: env(safe-area-inset-bottom);  
-	} 
-	/* end-iPhoneX底部安全区定义--end */
 </style>

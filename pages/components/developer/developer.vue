@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="t-demo">
-			<view class="t-demo-wrap mt-30">
+			<view class="t-demo-wrap t-mt-30">
 				<view class="t-demo-title">演示效果</view>
 				<view class="t-demo-area">
 					<view class="t-demo-result-line" @click="show">

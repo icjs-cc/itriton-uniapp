@@ -4,7 +4,7 @@
 			<view class="t-demo-title">演示效果</view>
 			<view class="t-demo-area">
 				<view class="t-demo-result-line" :class="[{'spin': !isFullscreen}]">
-					<view class="flex justify-center">《鸟鸣涧》</view>
+					<view class="t-flex t-justify-center">《鸟鸣涧》</view>
 					<view>
 						人闲桂花落，夜静春山空。
 					</view>
@@ -15,10 +15,10 @@
 				</view>
 			</view>
 		</view>
-		<view class="t-item-title mt-20">状态切换</view>
+		<view class="t-item-title t-mt-20">状态切换</view>
 		<subsection :list="list" v-model="current" @change="handleChange"></subsection>
 
-		<view class="t-item-title mt-20">是否全屏</view>
+		<view class="t-item-title t-mt-20">是否全屏</view>
 		<subsection :list="fullscreenList" v-model="fullscreenCurrent" @change="handleFullscreen"></subsection>
 	</view>
 </template>

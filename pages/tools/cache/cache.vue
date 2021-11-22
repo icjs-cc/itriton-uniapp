@@ -1,18 +1,18 @@
 <template>
 	<view class="t-demo">
-		<view class="t-demo-wrap mt-20">
+		<view class="t-demo-wrap t-mt-20">
 			<view class="t-demo-title">演示定时缓存</view>
 			<view class="t-demo-area">
-				<view class="t-demo-result-line mt-0" @click="setCache()">
+				<view class="t-demo-result-line t-demo-result-line-max mt-0" @click="setCache()">
 					设置定时缓存（this.$it.setCache）
 				</view>
-				<view class="t-demo-result-line" @click="getCache()">
+				<view class="t-demo-result-line t-demo-result-line-max" @click="getCache()">
 					获取定时缓存（this.$it.getCache）
 				</view>
-				<view class="t-demo-result-line" @click="removeCache()">
+				<view class="t-demo-result-line t-demo-result-line-max" @click="removeCache()">
 					移除定时缓存（this.$it.removeCache）
 				</view>
-				<view class="t-demo-result-line" @click="clearCache()">
+				<view class="t-demo-result-line t-demo-result-line-max" @click="clearCache()">
 					清除定时缓存（this.$it.clearCache）
 				</view>
 			</view>

@@ -1,0 +1,6 @@
+@import './libs/styles/animation.scss';
+@import './libs/styles/extends.scss';
+@import './libs/styles/common.scss';
+/* #ifdef H5 */
+@import './libs/styles/h5.scss';
+/* #endif */

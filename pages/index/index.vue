@@ -1,22 +1,24 @@
 <template>
 	<view class="index">
-		<view class="flex">
-			<view class="flex flex-direction justify-center">
-				<view class="flex align-center">
+		<view class="t-flex">
+			<view class="t-flex t-flex-direction t-justify-center">
+				<view class="t-flex t-align-center">
 					<image class="index-logo" src="/static/logo.png" mode=""></image>
-					<view class="index-title text-bold">iTriton组件库</view>
+					<view>
+						<view class="index-title text-bold">iTriton组件库</view>
+						<view class="t-text-df t-text-grey t-mt-10 t-ml-20">基于uni-app生态开发的组件库</view>
+					</view>
 				</view>
-				<view class="text-df text-grey mt-10">基于uni-app生态开发的组件库</view>
 			</view>
 		</view>
 		<view class="index__content">
-			<view class="text-gray text-df mb-20">基础组件</view>
+			<view class="t-text-gray t-text-df t-mb-20">基础组件</view>
 			<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`"
 					v-for="(item,index) in baseList" :key="index">
 				<text>{{item.name}}</text>
 				<text class="index__content-arrow"></text>
 			</navigator>
-			<view class="text-gray text-df mb-20">工具库</view>
+			<view class="t-text-gray t-text-df t-mb-20">工具库</view>
 			<view v-for="(item,index) in toolList" :key="item.url">
 				<navigator class="index__content-cell" :url="`${item.url}?title=${item.name}`">
 					<text>{{item.name}}</text>
@@ -40,8 +42,8 @@
 		padding: 80rpx 50rpx;
 
 		&-logo {
-			height: 80rpx;
-			width: 80rpx;
+			height: 100rpx;
+			width: 100rpx;
 		}
 
 		&-title {
